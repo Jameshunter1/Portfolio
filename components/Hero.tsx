@@ -4,46 +4,51 @@ import { Cursor, useTypewriter } from "react-simple-typewriter"
 import BackgroundCircles from './BackgroundCircles';
 import james from "../styles/james.png"
 import Link from 'next/link';
+import { PageInfo } from '../typings';
+import { urlFor } from '../sanity';
 
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo
+};
 
-export default function Hero({}: Props) { 
+export default function Hero({pageInfo}: Props) { 
       const [text, count] = useTypewriter({
-          words: ["Hey, I'm James Hunter", "<React Developer/>", "Possibly your Father"],
+          words: [`Hey, I'm ${pageInfo?.name}`, "<React Developer/>", "Possibly your Father"],
           loop: true,
           delaySpeed: 2000,
       });
     return (
-        <div className='h-screen flex flex-col  items-center justify-center text-center overflow-hidden'>
+        <div className='h-screen  flex flex-col items-center space-y-8 justify-center text-center overflow-hidden'>
             <BackgroundCircles />
+            
             <Image className='relative rounded-full mx-auto object-cover'
-                src={james}
-                alt=""
-                
-               />
-          
-           
-            <div>
-                <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Web Developer</h2>
-                <h1 className='text-5xl lg:text-6xl font-semibold scroll-px-10'>
-                <span className='mr-3'>{text}</span>
+                src={urlFor(pageInfo.heroImage).url()}
+                alt="" 
+                height="100"
+                width="100"
+            />
+           <div className='z-20'>
+                <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo.role}</h2>
+                <h1 className='text-5xl lg:text-6xl font-semibold '>
+                <span className=' mr-3'>{text}</span>
                 <Cursor cursorColor='#f7ab0a' />
                 </h1>
+           
                 <div className='pt-5'>
-                    <Link href="about">       
-                < button className='heroButton'>About</button>
+                    <Link href="#about">       
+                <button className='heroButton'>About</button>
                     </Link>
-                    <Link href="experience">
+                    <Link href="#experience">
                         < button className='heroButton'>Experience</button>
                     </Link>
-                    <Link href="skills">
+                    <Link href="#skills">
                         < button className='heroButton'>Skills</button>
                     </Link >
-                    <Link href="projects">
+                    <Link href="#projects">
                         < button className='heroButton'>Projects</button>
                     </Link >
-                </div>
+ </div>
            </div>
         </div>
     );
