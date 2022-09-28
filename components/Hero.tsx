@@ -12,9 +12,9 @@ type Props = {
     pageInfo: PageInfo
 };
 
-export default function Hero({pageInfo}: Props) { 
+ function Hero({pageInfo}: Props) { 
       const [text, count] = useTypewriter({
-          words: [`Hey, I'm ${pageInfo?.name}`, "<React Developer/>", "Possibly your Father"],
+          words: [`Hey, I'm ${pageInfo?.name}`, "<React Developer/>"],
           loop: true,
           delaySpeed: 2000,
       });
@@ -32,7 +32,7 @@ export default function Hero({pageInfo}: Props) {
                 <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo.role}</h2>
                 <h1 className='text-5xl lg:text-6xl font-semibold '>
                 <span className=' mr-3'>{text}</span>
-                <Cursor cursorColor='#f7ab0a' />
+                <Cursor cursorColor='#193d8a' />
                 </h1>
            
                 <div className='pt-5'>
@@ -53,3 +53,5 @@ export default function Hero({pageInfo}: Props) {
         </div>
     );
 }
+
+export default Hero;

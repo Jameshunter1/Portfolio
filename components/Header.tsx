@@ -8,7 +8,7 @@ type Props = {
     socials: Social[]
 }
 
-export default function header({ socials }: Props) {
+ function Header({ socials }: Props) {
     return (
         <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center'>
             
@@ -67,3 +67,5 @@ export default function header({ socials }: Props) {
     );
   
 }
+
+export default Header;
