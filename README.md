@@ -1,3 +1,10 @@
+
+Personal Portfolio 
+
+
+![jamessite](https://user-images.githubusercontent.com/90528783/199356850-6f3bbd92-3ebb-487b-9787-db55350052e9.PNG)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
