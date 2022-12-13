@@ -23,13 +23,13 @@ type Props = {
             <BackgroundCircles />
             
             <Image className='relative rounded-full mx-auto object-cover'
-                src={urlFor(pageInfo.heroImage).url()}
+                src={james}
                 alt="" 
                 height="100"
                 width="100"
             />
            <div className='z-20'>
-                <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo.role}</h2>
+                <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2>
                 <h1 className='text-5xl lg:text-6xl font-semibold '>
                 <span className=' mr-3'>{text}</span>
                 <Cursor cursorColor='#193d8a' />

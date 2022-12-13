@@ -10,14 +10,11 @@ import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import WorkExperience from '../components/WorkExperience';
 import { Experience, PageInfo, Project, Skill, Social } from '../typings';
-import { fetchPageInfo } from '../utils/fetchPageInfo';
-import { fetchProject } from '../utils/fetchProjects';
-import { fetchSkills } from '../utils/fetchSkills';
-import { fetchExperience } from '../utils/fetchExperiences';
-import { fetchSocials } from '../utils/fetchSocials';
+
 import james from "/styles/james.png"
 
-
+import { groq } from 'next-sanity';
+import { sanityClient } from '../sanity';
 
 type Props = {
   pageInfo: PageInfo;
@@ -81,23 +78,28 @@ const Home = ({ pageInfo, experiences, projects, skills, socials}: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props>  = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperience();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProject();
-  const socials: Social[] = await fetchSocials(); 
 
+export async function getStaticProps() {
+  // Make a request to each API endpoint
+  const PageInfo = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/getPageInfo`);
+  const Experience = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getExperience`);;
+  const Project = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`);
+  const Skill = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSkills`);
+  const Social = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`);
 
+  // Wait for all of the responses to be received
+  const [pageInfo, experiences, skills, projects, socials] = await Promise.all([PageInfo, Experience, Project, Skill, Social]);
+
+  // Return the response data as props
   return {
     props: {
       pageInfo,
       experiences,
       skills,
       projects,
-      socials,
-
+      socials
     },
-    revalidate: 10,
-  };
+  }
 }
+
+

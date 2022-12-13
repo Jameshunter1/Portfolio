@@ -8,7 +8,7 @@ interface SanityBody {
 interface Image {
     _type: "image";
     asset: {
-        _ref: string;
+        _ref: image;
         _type: "reference";
     }
 }
