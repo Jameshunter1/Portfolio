@@ -20,8 +20,8 @@ function Contact({ }: Props) {
       <div className='h-screen flex relative flex-col text-center md:text-left md:flex-flow max-w-7xl px-10 justify-evenly mx-auto items-center'>
           <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Contact</h3>
 
-          <div className='flex flex-col space-y-12'>
-              <h4 className='text-4xl font-semibold text-center'>
+          <div className='flex flex-col'>
+              <h4 className='text-4xl font-semibold text-center mt-7 max-w-[200px]'>
                   I have got just what you need. {""}
                   <span className=' decoration-[#5572af]/50 underline'>Lets Talk</span>
               </h4>

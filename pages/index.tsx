@@ -1,4 +1,4 @@
-import type { GetStaticProps } from 'next'
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,11 +10,10 @@ import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import WorkExperience from '../components/WorkExperience';
 import { Experience, PageInfo, Project, Skill, Social } from '../typings';
-
-import james from "/styles/james.png"
-
-import { groq } from 'next-sanity';
+import james from '/styles/james.png';
+import type { NextApiRequest, NextApiResponse } from "next";
 import { sanityClient } from '../sanity';
+import { groq } from 'next-sanity';
 
 type Props = {
   pageInfo: PageInfo;
@@ -22,13 +21,15 @@ type Props = {
   skills: Skill[];
   projects: Project[];
   socials: Social[];
-}
+};
 
-const Home = ({ pageInfo, experiences, projects, skills, socials}: Props) => {
+const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
+  
+
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll z-0 overflow-x-hidden scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#5572af]/40">
       <Head>
-        <title> {pageInfo?.name} Portfolio </title>
+        <title>{pageInfo?.name} Portfolio</title>
       </Head>
       {/* Header */}
       <Header socials={socials} />
@@ -77,19 +78,43 @@ const Home = ({ pageInfo, experiences, projects, skills, socials}: Props) => {
 };
 
 export default Home;
+    
+export const getStaticProps = async () => {
 
-
-export async function getStaticProps() {
+  const pageInfoQuery = groq`
+*[_type == "pageInfo"][0]`
+  const experienceQuery = groq`
+*[_type =="experience"]{
+    ...,
+    technologies[]->
+}`
+  const skillQuery = groq`
+*[_type =="skill"]{
+    ...,
+    technologies[]->
+}`
+  const projectQuery = groq`
+*[_type =="project"]{
+    ...,
+    technologies[]->
+}`
+  const socialQuery = groq`
+*[_type =="social"]
+` ;
   // Make a request to each API endpoint
-  const PageInfo = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/getPageInfo`);
-  const Experience = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getExperience`);;
-  const Project = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`);
-  const Skill = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSkills`);
-  const Social = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`);
-
-  // Wait for all of the responses to be received
-  const [pageInfo, experiences, skills, projects, socials] = await Promise.all([PageInfo, Experience, Project, Skill, Social]);
-
+  const [
+    pageInfo,
+    experiences,
+    skills,
+    projects,
+    socials,
+  ] = await Promise.all([
+    sanityClient.fetch(pageInfoQuery),
+    sanityClient.fetch(experienceQuery),
+    sanityClient.fetch(skillQuery),
+    sanityClient.fetch(projectQuery),
+    sanityClient.fetch(socialQuery),
+  ]);
   // Return the response data as props
   return {
     props: {
@@ -98,8 +123,7 @@ export async function getStaticProps() {
       skills,
       projects,
       socials
-    },
+    }
   }
 }
-
 

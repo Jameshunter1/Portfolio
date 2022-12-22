@@ -26,7 +26,7 @@ type Props = {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        src={urlFor(pageInfo?.profilePic).url()} className='-mb-20 mt-20 md:mb-0 flex-shrink-0 w-60 h-56 rounded-full object-cover md:w-64 md:h-95'
+        src={urlFor(pageInfo.profilePic).url()} className='-mb-20 mt-20 md:mb-0 flex-shrink-0 w-60 h-56 rounded-full object-cover md:w-64 md:h-95'
       />
       <div className='space-y-10 px-0 md:p-10'>
         <h4 className='text-4xl font-semibold'>Here is a <span className='underline decoration-[#5572af]/50'>little</span> background</h4>
