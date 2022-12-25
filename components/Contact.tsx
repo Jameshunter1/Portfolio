@@ -18,10 +18,10 @@ function Contact({ }: Props) {
   }
   return (
       <div className='h-screen flex relative flex-col text-center md:text-left md:flex-flow max-w-7xl px-10 justify-evenly mx-auto items-center'>
-          <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Contact</h3>
+          <h3 className='absolute top-16 uppercase tracking-[20px] text-gray-500 text-2xl pb-7'>Contact</h3>
 
           <div className='flex flex-col space-y-12'>
-              <h4 className='text-4xl font-semibold text-center'>
+              <h4 className='text-3xl pt-5 w-[400px] md:w-[500px] font-semibold text-center'>
                   I have got just what you need. {""}
                   <span className=' decoration-[#5572af]/50 underline'>Lets Talk</span>
               </h4>

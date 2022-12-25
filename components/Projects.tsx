@@ -3,9 +3,7 @@ import {motion }from "framer-motion"
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
 import Image from 'next/image';
-import { Slide } from 'react-slideshow-image'
-import {useState} from "react"
-import Slider from 'react-slick';
+
 import 'react-slideshow-image/dist/styles.css';
 type Props = {
 projects:Project[]
@@ -13,15 +11,8 @@ projects:Project[]
 
 
 function Project({ projects }: Props) {
-   const settings = {
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  dots: true,
-  // include other desired settings here
 
-};const slider = React.useRef(null);
-  return (
-   <Slide {...settings}> 
+  return ( 
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -35,7 +26,7 @@ function Project({ projects }: Props) {
         {/* Maps through the array of projects */}
    
           {projects?.map((project, i) => (
-            <div className=" w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
+            <div className=" w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen" key={project._id}>
             <motion.img src={urlFor(project?.image).url()} alt="" />
               <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                 <h4 className='text-4xl font-semibold text-center'>
@@ -61,7 +52,7 @@ function Project({ projects }: Props) {
       <div className='w-full absolute top-[30%] bg-[#5572af]/10 left-0 h-[500px] -skew-y-6'>
               
       </div>
-  </motion.div></Slide>
+  </motion.div>
     )
 }
 
