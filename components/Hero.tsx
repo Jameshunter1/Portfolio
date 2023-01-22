@@ -48,7 +48,12 @@ type Props = {
                     <Link href="#projects">
                         < button className='heroButton'>Projects</button>
                     </Link >
- </div>
+                </div>
+                <div className='resume'>
+                    <Link href="#">
+                        <button className="resumeButton">Download Resume</button>
+                    </Link>
+                </div>
            </div>
         </div>
     );

@@ -14,7 +14,7 @@ type Props = {
       <div className='group relative flex cursor-pointer'>
             <motion.img
                 initial={{
-                    x: directionLeft ? 200 : -100,
+                    x: directionLeft ? 200 : -600,
                     opacity: 0,
                     
                    

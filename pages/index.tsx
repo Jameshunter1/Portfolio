@@ -8,8 +8,7 @@ import Header from "../components/Header";
 import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
-import WorkExperience from '../components/WorkExperience';
-import { Experience, PageInfo, Project, Skill, Social } from '../typings';
+import {  PageInfo, Project, Skill, Social } from '../typings';
 import james from '/styles/james.png';
 import type { NextApiRequest, NextApiResponse } from "next";
 import { sanityClient } from '../sanity';
@@ -17,13 +16,12 @@ import { groq } from 'next-sanity';
 
 type Props = {
   pageInfo: PageInfo;
-  experiences: Experience[];
   skills: Skill[];
   projects: Project[];
   socials: Social[];
 };
 
-const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
+const Home = ({ pageInfo, projects, skills, socials }: Props) => {
   
 
   return (
@@ -43,10 +41,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <About pageInfo={pageInfo}/>
       </section>
 
-      {/* Experience */}
-      <section id="experience" className='snap-center'>
-        <WorkExperience experiences={experiences} />
-      </section>
+    
 
       {/* Skills */}
       <section id="skills" className='snap-start'>
@@ -66,8 +61,8 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
 
       <Link href="#hero">
-        <footer className='sticky bottom-5 w-full cursor-pointer'>
-          <div className='flex items-center justify-center'>
+        <footer className='sticky bottom-5 '>
+          <div className='flex  items-center justify-center m-0'>
             <Image className=" rounded-full filter grayscale hover:grayscale-0 cursor-pointer" src={james} alt="" height="50" width="50" />
           </div>
         </footer>
