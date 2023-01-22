@@ -13,14 +13,19 @@ type Props = {
     return (
       <div className='group relative flex cursor-pointer'>
             <motion.img
-                initial={{
-                    x: directionLeft ? 200 : -600,
-                    opacity: 0,
-                    
-                   
-                }}
-                transition={{ duration: 1 }}
-                whileInView={{opacity: 1, x: 0}}
+               initial={{
+    x: directionLeft ? 200 : -600,
+    y: -50,
+    rotate: directionLeft ? -10 : 10,
+
+    opacity: 0,
+  }}
+  transition={{
+    type: "tween",
+    duration: 0.5,
+    ease: "easeOut",
+  }}
+                whileInView={{opacity: 1, x: 0, y:0}}
                 src={urlFor(skill?.image).url()}
                 className='rounded-full border border-gray-500 object-cover w-20 h-20 md:w-24 md:h-24 xl:w-30 xl:h-30 filter group-hover:grayscale transition duration-300 ease-in-out'
             
