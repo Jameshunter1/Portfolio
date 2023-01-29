@@ -30,20 +30,20 @@ function Project({ projects }: Props) {
   const isCurrentProject = i === currentProjectIndex;
   return (  
     <section key={project._id} style={{ display: isCurrentProject ? 'block' : 'none' }}>
-      <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
+      <div className="w-screen flex-shrink-0 snap-center flex flex-col  items-center justify-center p-20 md:p-44 h-screen">
         <button 
-          className="absolute left-0 top-[50%] translate-y-[50%] pl-12" 
+          className="absolute left-0 text-[50px] w-[200px] text-blue-500 " 
           onClick={() => currentProjectIndex > 0 && setCurrentProjectIndex (currentProjectIndex - 1)}>&#10094;
         </button>
-        <motion.img src={urlFor(project?.image).url()} alt="" />
+        <motion.img src={urlFor(project?.image).url()} alt="" className='w:hidden w-[250px]'/>
         <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
-          <h4 className='text-4xl font-semibold text-center'>
+          <h4 className='text-xl md:text-3xl font-semibold text-center pt-10'>
             <span className='underline decoration-[#5572af]/50'>Case Study {i + 1} of {projects.length}: </span>
             {project?.title}
           </h4>
-          <div className='flex items-center space-x-7 justify-center'>
+          <div className='flex items-center  justify-center'>
             {project.technologies.map((technology) => (
-              <Image className='h-10 w-10 space-x-2'
+              <Image className='h-10 w-10 rounded-full '
                 key={technology._id}
                 src={urlFor(technology.image).url()}
                 alt=""
@@ -52,14 +52,13 @@ function Project({ projects }: Props) {
               />
             ))}
           </div>
-          <p className='text-lg text-center md:text-left'>{project.summary}</p>
+          <p className='text-lg text-center md:text-left hidden lg:block'>{project.summary}</p>
         </div>
-        <button className="absolute right-0 top-[50%] pr-12 w-[200px] text-[36px] text-blue-500" onClick={() => currentProjectIndex < projects.length-1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
+        <button className="absolute right-0 text-[50px] w-[200px] text-blue-500" onClick={() => currentProjectIndex < projects.length-1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
       </div>
     </section>
   )
 })}
-
     </motion.div>)
 }
    

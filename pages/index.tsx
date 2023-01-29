@@ -41,7 +41,10 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
         <About pageInfo={pageInfo}/>
       </section>
 
-    
+     {/* Projects */}
+      <section id="projects" className="snap-center">
+        <Projects projects={projects} />
+      </section>
 
       {/* Skills */}
       <section id="skills" className='snap-start'>
@@ -49,10 +52,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
         
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="snap-center">
-        <Projects projects={projects} />
-      </section>
+     
 
       {/* Contact Me */}
       <section id="contact" className="snap-start">
@@ -78,11 +78,7 @@ export const getStaticProps = async () => {
 
   const pageInfoQuery = groq`
 *[_type == "pageInfo"][0]`
-  const experienceQuery = groq`
-*[_type =="experience"]{
-    ...,
-    technologies[]->
-}`
+ 
   const skillQuery = groq`
 *[_type =="skill"]{
     ...,
@@ -99,13 +95,11 @@ export const getStaticProps = async () => {
   // Make a request to each API endpoint
   const [
     pageInfo,
-    experiences,
     skills,
     projects,
     socials,
   ] = await Promise.all([
     sanityClient.fetch(pageInfoQuery),
-    sanityClient.fetch(experienceQuery),
     sanityClient.fetch(skillQuery),
     sanityClient.fetch(projectQuery),
     sanityClient.fetch(socialQuery),
@@ -114,7 +108,6 @@ export const getStaticProps = async () => {
   return {
     props: {
       pageInfo,
-      experiences,
       skills,
       projects,
       socials

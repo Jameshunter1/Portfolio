@@ -8,6 +8,7 @@ import { PageInfo } from '../typings';
 import { urlFor } from '../sanity';
 
 
+
 type Props = {
     pageInfo: PageInfo
 };
@@ -32,30 +33,28 @@ type Props = {
                 <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2>
                 <h1 className='text-5xl lg:text-6xl font-semibold '>
                 <span className=' mr-3'>{text}</span>
-                <Cursor cursorColor='#193d8a' />
+                <Cursor cursorColor='#4c6ab3' />
                 </h1>
            
-                <div className='pt-5'>
+                <div className='pt-5 pb-12'>
                     <Link href="#about">       
                 <button className='heroButton'>About</button>
                     </Link>
-                    <Link href="#experience">
-                        < button className='heroButton'>Experience</button>
-                    </Link>
+                   
                     <Link href="#skills">
                         < button className='heroButton'>Skills</button>
                     </Link >
                     <Link href="#projects">
                         < button className='heroButton'>Projects</button>
-                    </Link >
+                    </Link >           
+                </div> 
+                        <button className='rounded-full border max-w[10px] h-[3rem]'>Resume / CV</button>
+                  
+                    
                 </div>
-                <div className='resume'>
-                    <Link href="#">
-                        <button className="resumeButton">Download Resume</button>
-                    </Link>
-                </div>
-           </div>
-        </div>
+            </div>
+           
+
     );
 }
 

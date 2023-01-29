@@ -26,7 +26,8 @@ type Props = {
                 }}
                 transition={{
                 duration:1.5,
-            }}    
+                }}    
+
             className='flex flex-row items-center'>
                 {/* Social Icons */}
                 {socials?.map((social) =>(
