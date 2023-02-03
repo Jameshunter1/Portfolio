@@ -58,12 +58,12 @@ function Project({ projects }: Props) {
           
           <p className='text-lg text-center md:text-left hidden lg:block'>{project.summary}</p>
 
-         
-          <button className="w-[200px] h-[200px]">
+         <a href={project.url}>
+          <button  className="w-[200px] h-[200px]">
           
-              {project.url}
+              
            </button>
-          
+          </a>
 
         </div>
         <button className="absolute right-0 text-[50px] w-[200px] text-blue-500" onClick={() => currentProjectIndex < projects.length-1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
