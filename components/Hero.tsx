@@ -48,7 +48,7 @@ type Props = {
                         < button className='heroButton'>Projects</button>
                     </Link >           
                 </div> 
-                        <button className='rounded-full border max-w[10px] h-[3rem]'>Resume / CV</button>
+                       
                   
                     
                 </div>

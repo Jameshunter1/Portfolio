@@ -20,14 +20,14 @@ function Contact({ }: Props) {
       <div className='h-screen flex relative flex-col text-center md:flex-flow max-w-7xl px-10 justify-evenly mx-auto items-center'>
           <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl '>Contact</h3>
 
-          <div className='flex flex-col space-y-12 '>
-              <h4 className='flex text-xl pt-[190px] font-semibold items-center'>
+          <div className='flex flex-col relative items-center'>
+              <h4 className='flex text-l font-semibold items-center'>
                   I have got just what you need. {" "}
-                  <span className='flex decoration-[#5572af]/50 underline invisible md:visible'> Lets Talk</span>
+                  <span className='flex decoration-[#5572af]/50 underline '>Lets Talk</span>
               </h4>
 
-              <div className='space-y-10'>
-                  <div className='flex items-center space-x-5 justify-center'>
+              <div className='space-y-10 '>
+                  <div className='flex items-center space-x-5 justify-center pt-5'>
                       <PhoneIcon className="text-[#5572af] h-7 w-7 animate-pulse"/>
                       <p>(905) 328-2058</p>
                   </div>

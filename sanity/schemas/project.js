@@ -29,10 +29,12 @@ export default {
       type: "array",
       of: [{type: "reference", to: {type:"skill"}}],
     },
+    
       {
-        name: "linkToBuild",
-        title: "LinkToBuild",
-        type:"url",
+          name: "url",
+          title: "url",
+          type: "url",
+        
       },
       
      

@@ -4,6 +4,7 @@ import { Project } from '../typings';
 import { urlFor } from '../sanity';
 import Image from 'next/image';
 import {useState} from"react"
+import Link from 'next/link';
 
 
 type Props = {
@@ -35,15 +36,15 @@ function Project({ projects }: Props) {
           className="absolute left-0 text-[50px] w-[200px] text-blue-500 " 
           onClick={() => currentProjectIndex > 0 && setCurrentProjectIndex (currentProjectIndex - 1)}>&#10094;
         </button>
-        <motion.img src={urlFor(project?.image).url()} alt="" className='w:hidden w-[250px]'/>
+        <motion.img src={urlFor(project?.image).url()} alt="" className='w:hidden w-[400px] mb-10'/>
         <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
           <h4 className='text-xl md:text-3xl font-semibold text-center pt-10'>
-            <span className='underline decoration-[#5572af]/50'>Case Study {i + 1} of {projects.length}: </span>
+            <span className='underline decoration-[#5572af]/50'>Project {i + 1} of {projects.length}: </span>
             {project?.title}
           </h4>
           <div className='flex items-center  justify-center'>
             {project.technologies.map((technology) => (
-              <Image className='h-10 w-10 rounded-full '
+              <Image className='h-10 w-10 rounded-full cursor-pointer'
                 key={technology._id}
                 src={urlFor(technology.image).url()}
                 alt=""
@@ -51,8 +52,19 @@ function Project({ projects }: Props) {
                 height="40"
               />
             ))}
+           
           </div>
+        
+          
           <p className='text-lg text-center md:text-left hidden lg:block'>{project.summary}</p>
+
+         
+          <button className="w-[200px] h-[200px]">
+          
+              {project.url}
+           </button>
+          
+
         </div>
         <button className="absolute right-0 text-[50px] w-[200px] text-blue-500" onClick={() => currentProjectIndex < projects.length-1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
       </div>
