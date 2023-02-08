@@ -1,10 +1,10 @@
 import React from 'react'
-import {motion }from "framer-motion"
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
 import Image from 'next/image';
 import {useState} from"react"
 import Link from 'next/link';
+import { motion, AnimatePresence } from "framer-motion"
 
 
 type Props = {
@@ -26,18 +26,19 @@ function Project({ projects }: Props) {
       </h3>
      
         {/* Maps through the array of projects */}
-        
+          
 {projects?.map((project, i) => {
   const isCurrentProject = i === currentProjectIndex;
   return (  
     <section key={project._id} style={{ display: isCurrentProject ? 'block' : 'none' }}>
+      <AnimatePresence>
       <div className="w-screen flex-shrink-0 snap-center flex flex-col  items-center justify-center p-20 md:p-44 h-screen">
         <button 
-          className="absolute left-0 text-[50px] w-[50px] text-blue-500 " 
+          className="absolute left-0 text-[50px] w-[50px] text-[#5572af] px-6" 
           onClick={() => currentProjectIndex > 0 && setCurrentProjectIndex (currentProjectIndex - 1)}>&#10094;
         </button>
-        <motion.img src={urlFor(project?.image).url()} alt="" className='w-[350px] md:w-[500px] h-[200px] md:h-[400px] lg:h-[600px] pt-12 md:pt-[120px] relative align-middle'/>
-        <button className="absolute right-0 text-[50px] w-[50px] text-blue-500" onClick={() => currentProjectIndex < projects.length - 1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
+        <motion.img src={urlFor(project?.image).url()} alt="" className='w-[350px] md:w-[500px] h-[200px] md:h-[400px] lg:h-[600px] pt-12  relative align-middle'/>
+        <button className="absolute right-0 text-[50px] w-[50px] text-[#5572af] px-12" onClick={() => currentProjectIndex < projects.length - 1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
         <div className='space-y-10 px-0 md:px-10 max-w-6xl'> 
           <h4 className='text-xl md:text-3xl font-semibold text-center pt-10'>
             <span className='underline decoration-[#5572af]/50'>Project {i + 1} of {projects.length}: </span>
@@ -60,18 +61,19 @@ function Project({ projects }: Props) {
           <p className='text-lg text-center md:text-left hidden lg:block'>{project.summary}</p>
 <div className='flex justify-between'>
          <a href={project.url}>
-          <button  className="w-[50px] md:w-[150px] h-[50px] bg-blue-700 text-white cursor-pointer rounded-full">Source
+          <button  className="w-[60px] md:w-[100px] h-[35px] bg-[#5572af] text-white cursor-pointer  hover:scale-[1.2]">Source
            </button>
             </a>
             <a href={project.url}>
-          <button  className="w-[50px] md:w-[150px] h-[50px] bg-blue-700 text-white cursor-pointer rounded-full">Live
+          <button  className="w-[60px] md:w-[100px] h-[35px] bg-[#5572af] text-white cursor-pointer  hover:scale-[1.2]">Live
            </button>
           </a>
 </div>
         </div>
-       
+      
       </div>
-    </section>
+  </AnimatePresence>
+     </section>
   )
 })}
     </motion.div>)

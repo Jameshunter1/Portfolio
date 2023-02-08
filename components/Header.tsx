@@ -25,8 +25,9 @@ type Props = {
                 
                 }}
                 transition={{
-                duration:1.5,
-                }}    
+                duration:2,
+                }}  
+               
 
             className='flex flex-row items-center'>
                 {/* Social Icons */}
@@ -44,7 +45,7 @@ type Props = {
                 initial={{
                     x: 500,
                     opacity: 0,
-                    scale:0.5
+                    scale:.5
                 }}
                 animate={{
                     x: 0,
@@ -52,7 +53,7 @@ type Props = {
                     scale:1
                 }}
                 transition={{
-                    duration: 1.5,
+                    duration: 2,
                 }}
                     className="flex flex-row items-center text-gray-300 cursor-pointer">
                     
@@ -60,7 +61,7 @@ type Props = {
                     network='email'
                     fgColor='gray'
                     bgColor='transparent' />
-                <p className="uppercase hidden md:inline-flex text-sm text-gray-400"> Get in Touch</p>
+                <p className="uppercase hidden md:inline-flex text-sm text-gray-400 hover:scale-105"> Get in Touch</p>
 
             </motion.div>
             </Link>

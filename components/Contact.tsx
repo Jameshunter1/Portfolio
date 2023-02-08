@@ -17,7 +17,7 @@ function Contact({ }: Props) {
   }
   return (
       <div className='h-screen flex relative flex-col text-center md:flex-flow max-w-7xl px-10 justify-evenly mx-auto items-center'>
-          <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl '>Contact</h3>
+          <h3 className='absolute top-24 uppercase tracking-[20px] justify-center text-gray-500 text-xl md:text-2xl '>Contact</h3>
 
           <div className='flex flex-col relative items-center'>
               <h4 className='flex text-sm  text-center font-semibold items-center invisible md:visible mt-12'>
@@ -40,7 +40,7 @@ function Contact({ }: Props) {
                   </div>
                  
               </div>
-              <form onSubmit={handleSubmit (onSubmit)} className='flex flex-col space-y-1  mt-10 mx-auto w-[250px] md:w-[600px]'>
+              <form onSubmit={handleSubmit (onSubmit)} className='flex flex-col space-y-1  mt-10 mx-auto w-[250px] md:w-[500px]'>
    
                       <input {...register('name')} placeholder=" Name" className='contactInput' type="text" />
                         
