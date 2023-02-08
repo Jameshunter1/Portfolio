@@ -36,7 +36,7 @@ function Project({ projects }: Props) {
           className="absolute left-0 text-[50px] w-[50px] text-blue-500 " 
           onClick={() => currentProjectIndex > 0 && setCurrentProjectIndex (currentProjectIndex - 1)}>&#10094;
         </button>
-        <motion.img src={urlFor(project?.image).url()} alt="" className='w-[400px] md:w-[500px] h-[300px] md:h-[400px] lg:h-[600px] pt-12 md:pt-[120px] relative align-middle'/>
+        <motion.img src={urlFor(project?.image).url()} alt="" className='w-[350px] md:w-[500px] h-[200px] md:h-[400px] lg:h-[600px] pt-12 md:pt-[120px] relative align-middle'/>
         <button className="absolute right-0 text-[50px] w-[50px] text-blue-500" onClick={() => currentProjectIndex < projects.length - 1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
         <div className='space-y-10 px-0 md:px-10 max-w-6xl'> 
           <h4 className='text-xl md:text-3xl font-semibold text-center pt-10'>
@@ -45,7 +45,7 @@ function Project({ projects }: Props) {
           </h4>
           <div className='flex items-center  justify-center'>
             {project.technologies.map((technology) => (
-              <Image className='h-10 w-10 rounded-full cursor-pointer'
+              <Image className='h-10 w-10 px-2 rounded-full cursor-pointer'
                 key={technology._id}
                 src={urlFor(technology.image).url()}
                 alt=""
@@ -58,7 +58,7 @@ function Project({ projects }: Props) {
         
           
           <p className='text-lg text-center md:text-left hidden lg:block'>{project.summary}</p>
-<div className='flex justify-evenly'>
+<div className='flex justify-between'>
          <a href={project.url}>
           <button  className="w-[50px] md:w-[150px] h-[50px] bg-blue-700 text-white cursor-pointer rounded-full">Source
            </button>
