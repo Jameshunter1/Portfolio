@@ -2,7 +2,7 @@ import React from 'react'
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
 import Image from 'next/image';
-import {useState} from"react"
+import { useState } from "react";
 import Link from 'next/link';
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -34,11 +34,11 @@ function Project({ projects }: Props) {
       <AnimatePresence>
       <div className="w-screen flex-shrink-0 snap-center flex flex-col  items-center justify-center p-20 md:p-44 h-screen">
         <button 
-          className="absolute left-0 text-[50px] w-[50px] text-[#5572af] px-6" 
+          className="animate-pulse left-20 absolute text-[50px] w-[50px] text-[#5572af] px-6" 
           onClick={() => currentProjectIndex > 0 && setCurrentProjectIndex (currentProjectIndex - 1)}>&#10094;
         </button>
         <motion.img src={urlFor(project?.image).url()} alt="" className='w-[350px] md:w-[500px] h-[200px] md:h-[400px] lg:h-[600px] pt-12  relative align-middle'/>
-        <button className="absolute right-0 text-[50px] w-[50px] text-[#5572af] px-12" onClick={() => currentProjectIndex < projects.length - 1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
+        <button className="animate-pulse absolute right-20 text-[50px] w-[50px] text-[#5572af] px-12" onClick={() => currentProjectIndex < projects.length - 1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
         <div className='space-y-10 px-0 md:px-10 max-w-6xl'> 
           <h4 className='text-xl md:text-3xl font-semibold text-center pt-10'>
             <span className='underline decoration-[#5572af]/50'>Project {i + 1} of {projects.length}: </span>
@@ -59,13 +59,13 @@ function Project({ projects }: Props) {
         
           
           <p className='text-lg text-center md:text-left hidden lg:block'>{project.summary}</p>
-<div className='flex justify-between'>
+<div className='flex justify-evenly'>
          <a href={project.url}>
-          <button  className="w-[60px] md:w-[100px] h-[35px] bg-[#5572af] text-white cursor-pointer  hover:scale-[1.2]">Source
+          <button  className="w-[100px] md:w-[100px] h-[35px] text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">Source
            </button>
             </a>
             <a href={project.url}>
-          <button  className="w-[60px] md:w-[100px] h-[35px] bg-[#5572af] text-white cursor-pointer  hover:scale-[1.2]">Live
+          <button  className=" w-[100px] h-[35px] text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">Live
            </button>
           </a>
 </div>
@@ -81,3 +81,5 @@ function Project({ projects }: Props) {
    
 
 export default Project;
+         
+       
