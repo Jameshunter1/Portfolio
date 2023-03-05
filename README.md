@@ -1,4 +1,4 @@
-## Personal Portfolio
+## Developer Portfolio
 
 This portfolio website is a prime example of modern web development, built using Next.js, React, Tailwind CSS, and Sanity.io. The website showcases the ability to build fast, responsive, and visually appealing web applications using cutting-edge technologies and frameworks.
 
