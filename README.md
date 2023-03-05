@@ -30,25 +30,29 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 
 The folder structure for this project is as follows:
 
-`Portfolio/
-- README.md
--  node_modules/
-- package.json
-- public/
+Portfolio/
+
+- components/
+- node_modules/
+ ...
+- pages/
+ - api
+ - _app.ts
+ - index.ts
+- sanity/
+- styles/
+- utils/
  -  favicon.ico
- - images/
-      ...
-- src/
- - components/
-      ...
-    pages/
-      ...
-    styles/
-      ...
-    utils/
-      sanity.js
-      ...
-    [...].js`
+- .env
+- .env.example
+- .env.production
+- next.config
+- next-env.d
+- package.json
+- package-lock.json
+- postcss.config
+- README.md
+
 
 ## Available Scripts
 
