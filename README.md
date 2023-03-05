@@ -1,6 +1,6 @@
 ## Personal Portfolio
 
-This is a portfolio website built using Next.js, React, Tailwind CSS, and Sanity.io. The website showcases my ability to build responsive web applications using Next.js and React, and styling with Tailwind CSS.
+This portfolio website is a prime example of modern web development, built using Next.js, React, Tailwind CSS, and Sanity.io. The website showcases the developer's ability to build fast, responsive, and visually appealing web applications using cutting-edge technologies and frameworks.
 
 ## Prerequisites
 
