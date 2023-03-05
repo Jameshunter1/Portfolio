@@ -35,23 +35,51 @@ Portfolio/
 components/
 node_modules/ ...
 
- pages/
+pages/
  - api
  - _app.ts
  - index.ts
- sanity/
- styles/
- utils/
- -  favicon.ico
- .env
- .env.example
- .env.production
- next.config
- next-env.d
- package.json
- package-lock.json
- postcss.config
- README.md
+sanity/
+ - config/
+ - dist/
+ - node_modules/
+ - plugins/
+ - schemas/
+ - static/
+ - eslintrc
+ -.npmignore
+ - package.json
+ - package-lock.json
+ - README.md
+ - sanity
+ - tsconfig
+styles/
+ - blackbackground.png
+ - globals.css
+ - james.png
+utils/
+ - fetchPageInfo/
+ - fetchProjects/
+ - fetchSkills/
+ - fetchSocials/
+ 
+.env
+
+.env.example
+
+.env.production
+
+next.config
+
+next-env.d
+
+package.json
+
+package-lock.json
+
+postcss.config
+
+README.md
 
 
 ## Available Scripts
