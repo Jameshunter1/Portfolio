@@ -4,7 +4,7 @@ This portfolio website is a prime example of modern web development, built using
 
 The use of Next.js and React has enabled the creation of a modular and efficient codebase, allowing for improved performance and faster loading times. Additionally, the use of Tailwind CSS has facilitated the creation of a consistent and modern design language throughout the website, making it easy to navigate and visually appealing. Furthermore, the integration of Sanity.io as a content management system has made it simple to manage and update portfolio items, providing a flexible and scalable infrastructure for future development.
 
-### This is a Next.js project bootstrapped with create-next-app.
+This is a Next.js project bootstrapped with create-next-app.
 
 ## Prerequisites
 
