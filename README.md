@@ -35,7 +35,7 @@ Portfolio/
 - components/
 - node_modules/
  ...
-- pages/
+- pages /
   api
   _app.ts
  - index.ts
