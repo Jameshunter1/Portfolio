@@ -32,16 +32,16 @@ The folder structure for this project is as follows:
 
 Portfolio/
 
- - components/
+ components/
 
- - node_modules/
+ node_modules/
 
- - pages/
+ pages/
   - api
   - _app.ts
   - index.ts
  
- - sanity/
+ sanity/
   - config/
   - dist/
   - node_modules/
@@ -56,34 +56,34 @@ Portfolio/
   - sanity
   - tsconfig
  
- - styles/
+ styles/
   - blackbackground.png
   - globals.css
   - james.png
  
- - utils/
+ utils/
   - fetchPageInfo/
   - fetchProjects/
   - fetchSkills/
   - fetchSocials/
  
- - .env
+ .env
 
- - .env.example
+ .env.example
 
- - .env.production
+ .env.production
 
- - next.config
+ next.config
 
- - next-env.d
+ next-env.d
 
- - package.json
+ package.json
 
- - package-lock.json
+ package-lock.json
 
- - postcss.config
+ postcss.config
 
- - README.md
+ README.md
 
 
 ## Available Scripts
