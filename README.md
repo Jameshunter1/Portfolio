@@ -33,8 +33,8 @@ The folder structure for this project is as follows:
 Portfolio/
 
 components/
-node_modules/
- - ...
+node_modules/ ...
+
  pages/
  - api
  - _app.ts
