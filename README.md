@@ -1,12 +1,12 @@
-#Personal Portfolio
+# Personal Portfolio
 
 This is a React project that uses Tailwind CSS for styling and Sanity.io for managing content.
 
-#Prerequisites
+# Prerequisites
 
 Make sure you have Node.js installed on your system before proceeding.
 
-#Installation
+# Installation
 
 Clone the repository using the following command:
 bash
@@ -25,7 +25,7 @@ Copy code
 npm start
 Open your browser and navigate to http://localhost:3000 to view the app.
 
-#Folder Structure
+# Folder Structure
 
 The folder structure for this project is as follows:
 
@@ -51,7 +51,7 @@ project-name/
     index.js
 
 
-#Available Scripts
+# Available Scripts
 
 In the project directory, you can run the following scripts:
 
@@ -70,7 +70,7 @@ Note: this is a one-way operation. Once you eject, you can’t go back!
 #Configuration
 To configure Sanity.io, you will need to create a free account and set up a new project. Once you have your project ID and dataset name, you can update the sanity.js file in the utils folder with your configuration details.
 
-#Acknowledgments
+# Acknowledgments
 
 Create React App
 Tailwind CSS
@@ -79,7 +79,7 @@ License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-#Contact
+# Contact
 For any questions or comments, please email your-email.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
