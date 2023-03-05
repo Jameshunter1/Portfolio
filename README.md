@@ -1,6 +1,86 @@
+#Personal Portfolio
 
-Personal Portfolio 
+This is a React project that uses Tailwind CSS for styling and Sanity.io for managing content.
 
+#Prerequisites
+
+Make sure you have Node.js installed on your system before proceeding.
+
+#Installation
+
+Clone the repository using the following command:
+bash
+Copy code
+git clone https://github.com/username/project-name.git
+Navigate to the project directory using:
+bash
+Copy code
+cd project-name
+Install the project dependencies using:
+Copy code
+npm install
+Start the development server using:
+sql
+Copy code
+npm start
+Open your browser and navigate to http://localhost:3000 to view the app.
+
+#Folder Structure
+
+The folder structure for this project is as follows:
+
+java
+Copy code
+project-name/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    components/
+      App.js
+      ...
+    styles/
+      index.css
+      ...
+    utils/
+      sanity.js
+      ...
+    index.js
+
+
+#Available Scripts
+
+In the project directory, you can run the following scripts:
+
+npm start
+Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
+
+npm test
+Launches the test runner in the interactive watch mode.
+
+npm run build
+Builds the app for production to the build folder.
+
+npm run eject
+Note: this is a one-way operation. Once you eject, you can’t go back!
+
+#Configuration
+To configure Sanity.io, you will need to create a free account and set up a new project. Once you have your project ID and dataset name, you can update the sanity.js file in the utils folder with your configuration details.
+
+#Acknowledgments
+
+Create React App
+Tailwind CSS
+Sanity.io
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+#Contact
+For any questions or comments, please email your-email.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
