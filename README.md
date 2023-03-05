@@ -31,6 +31,7 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 The folder structure for this project is as follows:
 
 Portfolio/
+
  components/
   - About.ts
   - BackgroundCircles.ts
