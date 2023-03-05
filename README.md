@@ -93,6 +93,9 @@ Portfolio/
 
  README.md
 
+# Getting Started
+
+This project was bootstrapped with Create-react-app.
 
 ## Available Scripts
 
