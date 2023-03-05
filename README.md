@@ -23,29 +23,6 @@ Start the development server using:
 npm start
 Open your browser and navigate to http://localhost:3000 to view the app.
 
-## Folder Structure
-
-The folder structure for this project is as follows:
-
-project-name/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    components/
-      App.js
-      ...
-    styles/
-      index.css
-      ...
-    utils/
-      sanity.js
-      ...
-    index.js
-
 
 ## Available Scripts
 
@@ -63,7 +40,8 @@ Builds the app for production to the build folder.
 npm run eject
 Note: this is a one-way operation. Once you eject, you can’t go back!
 
-#Configuration
+## Configuration
+
 To configure Sanity.io, you will need to create a free account and set up a new project. Once you have your project ID and dataset name, you can update the sanity.js file in the utils folder with your configuration details.
 
 ## Acknowledgments
