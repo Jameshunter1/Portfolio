@@ -36,8 +36,8 @@ Portfolio/
 - node_modules/
  ...
 - pages/
- - api
- - _app.ts
+  api
+  _app.ts
  - index.ts
 - sanity/
 - styles/
