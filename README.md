@@ -1,6 +1,6 @@
 ## Personal Portfolio
 
-This is a portfolio website built using Next.js, React, Tailwind CSS, and Sanity.io. The website showcases [your skills, experience, and projects].
+This is a portfolio website built using Next.js, React, Tailwind CSS, and Sanity.io. The website showcases my ability to build responsive web applications using Next.js and React, and styling with Tailwind CSS.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 
  1. Clone the repository using the following command:
 
- `git clone https://github.com/Jameshunter1/[Portfolio.git]`
+ `git clone https://github.com/Jameshunter1/Portfolio.git`
 
  2. Navigate to the project directory using:
 
@@ -31,7 +31,6 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 The folder structure for this project is as follows:
 
 Portfolio/
-
  components/
   - About.ts
   - BackgroundCircles.ts
