@@ -32,26 +32,26 @@ The folder structure for this project is as follows:
 
 Portfolio/
 
-- components/
-- node_modules/
- ...
-- pages /
-  api
-  _app.ts
+components/
+node_modules/
+ - ...
+ pages/
+ - api
+ - _app.ts
  - index.ts
-- sanity/
-- styles/
-- utils/
+ sanity/
+ styles/
+ utils/
  -  favicon.ico
-- .env
-- .env.example
-- .env.production
-- next.config
-- next-env.d
-- package.json
-- package-lock.json
-- postcss.config
-- README.md
+ .env
+ .env.example
+ .env.production
+ next.config
+ next-env.d
+ package.json
+ package-lock.json
+ postcss.config
+ README.md
 
 
 ## Available Scripts
