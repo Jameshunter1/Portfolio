@@ -9,19 +9,17 @@ Make sure you have Node.js installed on your system before proceeding.
 ## Installation
 
 Clone the repository using the following command:
-bash
-Copy code
+
 git clone https://github.com/username/project-name.git
 Navigate to the project directory using:
-bash
-Copy code
+
 cd project-name
+
 Install the project dependencies using:
-Copy code
+
 npm install
+
 Start the development server using:
-sql
-Copy code
 npm start
 Open your browser and navigate to http://localhost:3000 to view the app.
 
@@ -29,8 +27,6 @@ Open your browser and navigate to http://localhost:3000 to view the app.
 
 The folder structure for this project is as follows:
 
-java
-Copy code
 project-name/
   README.md
   node_modules/
