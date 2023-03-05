@@ -10,10 +10,10 @@ Make sure you have Node.js installed on your system before proceeding.
 
 Clone the repository using the following command:
 
-git clone https://github.com/username/project-name.git
+git clone https://github.com/Jameshunter1/Portfolio.git
 Navigate to the project directory using:
 
-cd project-name
+cd Portfolio
 
 Install the project dependencies using:
 
