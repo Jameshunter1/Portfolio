@@ -39,6 +39,7 @@ pages/
  - api
  - _app.ts
  - index.ts
+ 
 sanity/
  - config/
  - dist/
@@ -53,10 +54,12 @@ sanity/
  - README.md
  - sanity
  - tsconfig
+ 
 styles/
  - blackbackground.png
  - globals.css
  - james.png
+ 
 utils/
  - fetchPageInfo/
  - fetchProjects/
