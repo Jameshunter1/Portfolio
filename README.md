@@ -30,6 +30,15 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 
  5. Open your browser and navigate to http://localhost:3000 to view the app.
 
+
+## Features
+
+ - Implemented the contact form functionality, allowing users to submit their information and open their local email app with pre-populated fields for easy sending.
+ - Automated deployment and continuous integration using Vercel
+ - Server-side rendering for improved performance and SEO
+ - Integration with Sanity.io content management system for easy content updates
+ 
+
 ## Folder Structure
 
 The folder structure for this project is as follows:
@@ -103,9 +112,13 @@ Portfolio/
 First, run the development server:
 
 npm run dev
+
  or
+ 
 yarn dev
+
  or
+ 
 pnpm dev
 
 Open http://localhost:3000 with your browser to see the result.
