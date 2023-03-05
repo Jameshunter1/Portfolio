@@ -98,7 +98,7 @@ Portfolio/
 
 # Getting Started
 
-This project was bootstrapped with Create-react-app.
+This project was bootstrapped with Create-next-app.
 
 ## Available Scripts
 
