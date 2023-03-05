@@ -4,6 +4,8 @@ This portfolio website is a prime example of modern web development, built using
 
 The use of Next.js and React has enabled the creation of a modular and efficient codebase, allowing for improved performance and faster loading times. Additionally, the use of Tailwind CSS has facilitated the creation of a consistent and modern design language throughout the website, making it easy to navigate and visually appealing. Furthermore, the integration of Sanity.io as a content management system has made it simple to manage and update portfolio items, providing a flexible and scalable infrastructure for future development.
 
+### This is a Next.js project bootstrapped with create-next-app.
+
 ## Prerequisites
 
 Make sure you have Node.js and npm installed on your system before proceeding.
@@ -97,28 +99,35 @@ Portfolio/
 
 
 # Getting Started
+First, run the development server:
 
-This project was bootstrapped with Create-next-app.
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 
-## Available Scripts
+Open http://localhost:3000 with your browser to see the result.
 
-In the project directory, you can run the following scripts:
+You can start editing the page by modifying pages/index.js. The page auto-updates as you edit the file.
 
-`npm run dev`
+API routes can be accessed on http://localhost:3000/api/hello. This endpoint can be edited in pages/api/hello.js.
 
-Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
+The pages/api directory is mapped to /api/*. Files in this directory are treated as API routes instead of React pages.
 
-`npm run build`
+This project uses next/font to automatically optimize and load Inter, a custom Google Font.
 
-Builds the app for production to the .next folder.
+## Learn More
+To learn more about Next.js, take a look at the following resources:
 
-`npm run start`
+## Next.js Documentation - learn about Next.js features and API.
+Learn Next.js - an interactive Next.js tutorial.
+You can check out the Next.js GitHub repository - your feedback and contributions are welcome!
 
-Starts the app in production mode. The app should be compiled with npm run build first.
+## Deploy on Vercel
+The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
 
-`npm run lint`
-
-- Lints the code using ESLint and Prettier.
+## Check out our Next.js deployment documentation for more details.
 
 ## Configuration
 
