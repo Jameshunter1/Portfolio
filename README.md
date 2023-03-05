@@ -33,6 +33,14 @@ The folder structure for this project is as follows:
 Portfolio/
 
  components/
+  - About.ts
+  - BackgroundCircles.ts
+  - Contact.ts
+  - Header.ts
+  - Hero.ts
+  - Projects.ts
+  - Skill.ts
+  - Skills.ts
 
  node_modules/
 
