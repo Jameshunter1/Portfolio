@@ -20,27 +20,27 @@ function Contact({ }: Props) {
           <h3 className='absolute top-24 uppercase tracking-[20px] justify-center text-gray-500 text-xl md:text-2xl '>Contact</h3>
 
           <div className='flex flex-col relative items-center'>
-              <h4 className='flex text-sm  text-center font-semibold items-center invisible md:visible mt-12'>
+              <h4 className='flex text-md text-center font-semibold md:mb-12 items-center invisible md:visible'>
                   I have got just what you need. {" "}
                   <span className='flex decoration-[#5572af]/50 underline '> Lets Talk</span>
               </h4>
 
-              <div className='space-y-5 '>
-                  <div className='flex items-center space-x-5 justify-center pt-5'>
+              <div className='space-y-2 '>
+                  <div className='flex items-center space-x-5'>
                       <PhoneIcon className="text-[#5572af] h-7 w-7 animate-pulse"/>
                       <p>(905) 328-2058</p>
                   </div>
-                  <div className='flex items-center space-x-5 justify-center'>
+                  <div className='flex items-center space-x-5 '>
                       <EnvelopeIcon className="text-[#5572af] h-7 w-7 animate-pulse"/>
                       <p>James.hunter0423@gmail.com</p>
                   </div>
-                  <div className='flex items-center space-x-5 justify-center'>
+                  <div className='flex items-center space-x-5 '>
                       <MapPinIcon className="text-[#5572af] h-7 w-7 animate-pulse"/>
                       <p>Welland, ON</p>
                   </div>
                  
               </div>
-              <form onSubmit={handleSubmit (onSubmit)} className='flex flex-col space-y-1  mt-10 mx-auto w-[250px] md:w-[500px]'>
+              <form onSubmit={handleSubmit (onSubmit)} className='flex flex-col space-y-4 mt-4 mx-auto w-[250px] md:w-[500px] justify-between'>
    
                       <input {...register('name')} placeholder=" Name" className='contactInput' type="text" />
                         
@@ -48,7 +48,7 @@ function Contact({ }: Props) {
                  
                      <input {...register('email')} placeholder=" Subject"className='contactInput' type="text"/>
                       <textarea {...register('email')} placeholder=" Message"className='contactInput' />
-                      <button type="submit"className='bg-[#5572af] py-5 px-10 rounded-md text-black font-bold text-lg'>Submit</button> 
+                      <button type="submit"className='bg-[#5572af] py-2 md:py-5 px-10 rounded-md text-black font-bold text-lg'>Submit</button> 
               </form>
           </div>     
           </div>

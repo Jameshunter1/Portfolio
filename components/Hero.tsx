@@ -32,7 +32,7 @@ type Props = {
            <div className='z-20'>
                 <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2>
                 <h1 className='text-5xl lg:text-6xl font-semibold '>
-                <span className=' mr-3'>{text}</span>
+                <span>{text}</span>
                 <Cursor cursorColor='#4c6ab3' />
                 </h1>
            

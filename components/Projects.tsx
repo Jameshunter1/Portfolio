@@ -34,13 +34,13 @@ function Project({ projects }: Props) {
       <AnimatePresence>
       <div className="w-screen flex-shrink-0 snap-center flex flex-col  items-center justify-center p-20 md:p-44 h-screen">
         <button 
-          className="animate-pulse left-20 absolute text-[50px] w-[50px] text-[#5572af] px-6" 
+          className="animate-pulse left-10 absolute text-[50px] w-[50px] text-[#5572af] pr-[100px]" 
           onClick={() => currentProjectIndex > 0 && setCurrentProjectIndex (currentProjectIndex - 1)}>&#10094;
         </button>
         <motion.img src={urlFor(project?.image).url()} alt="" className='w-[350px] md:w-[500px] h-[200px] md:h-[400px] lg:h-[600px] pt-12  relative align-middle'/>
-        <button className="animate-pulse absolute right-20 text-[50px] w-[50px] text-[#5572af] px-12" onClick={() => currentProjectIndex < projects.length - 1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
+        <button className="animate-pulse absolute right-10 text-[50px] w-[50px] text-[#5572af] " onClick={() => currentProjectIndex < projects.length - 1 && setCurrentProjectIndex(currentProjectIndex + 1)}>&#10095;</button>
         <div className='space-y-10 px-0 md:px-10 max-w-6xl'> 
-          <h4 className='text-xl md:text-3xl font-semibold text-center pt-10'>
+          <h4 className='text-xl md:text-3xl font-semibold text-center'>
             <span className='underline decoration-[#5572af]/50'>Project {i + 1} of {projects.length}: </span>
             {project?.title}
           </h4>
