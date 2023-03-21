@@ -12,7 +12,7 @@
 @apply px-8 py-5 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#5572af]/40 hover:text-[#5572af]/40 items-center
     }
     .contactInput {
-@apply flex flex-col bg-gray-300 outline-none rounded-sm border-b py-4 border-[#242424] text-gray-50 placeholder-gray-500 transition-all focus:border-[#5572af]/40 focus:text-[#5572af]/40 hover:border-[#5572af]/40 
+@apply flex flex-col bg-gray-800 outline-none rounded-sm border-b py-4 border-[#242424] text-gray-50 placeholder-gray-500 transition-all focus:border-white focus:text-white hover:border-white px-3 
 
     }  
   }

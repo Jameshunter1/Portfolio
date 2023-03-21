@@ -25,19 +25,19 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
   
 
   return (
-    <div className=" text-white h-screen snap-y snap-mandatory overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
+    <div className=" text-white h-screen scroll-snap snap-y snap-mandatory overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
       <Head>
         <title>{pageInfo?.name} Portfolio</title>
       </Head>
       {/* Header */}
-      <Header socials={socials} />
+      <Header socials={socials}  />
       {/* Hero */}
-      <section id="hero" className='snap-start'>
+      <section id="hero" className="snap-center">
         <Hero pageInfo={pageInfo} />
        
       </section>
       {/* About */}
-      <section id="about" className='snap-center'>
+      <section id="about" className="snap-center">
         <About pageInfo={pageInfo}/>
       </section>
 
@@ -47,7 +47,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
       </section>
 
       {/* Skills */}
-      <section id="skills" className='snap-start'>
+      <section id="skills"className="snap-center" >
         <Skills skills={skills} />
         
       </section>
@@ -55,7 +55,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
      
 
       {/* Contact Me */}
-      <section id="contact" className="snap-start">
+      <section id="contact" className="snap-center">
         <Contact/>
       </section>
 
