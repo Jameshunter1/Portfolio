@@ -1,4 +1,3 @@
-import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +9,6 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import { PageInfo, Project, Skill, Social } from "../typings";
 import james from "/styles/james.png";
-import type { NextApiRequest, NextApiResponse } from "next";
 import { sanityClient } from "../sanity";
 import { groq } from "next-sanity";
 
@@ -25,17 +23,18 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
   return (
     <div className=" text-white h-screen scroll-snap snap-y snap-mandatory overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
       <Head>
+        <link rel="icon" href="./public/images/favicon.ico" />
         <title>{pageInfo?.name} Portfolio</title>
       </Head>
       {/* Header */}
-      <Header socials={socials}  />
+      <Header socials={socials} />
       {/* Hero */}
       <section id="hero" className="snap-center">
         <Hero pageInfo={pageInfo} />
       </section>
       {/* About */}
       <section id="about" className="snap-center">
-        <About pageInfo={pageInfo}/>
+        <About pageInfo={pageInfo} />
       </section>
 
       {/* Projects */}
@@ -44,13 +43,13 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
       </section>
 
       {/* Skills */}
-      <section id="skills"className="snap-center" >
+      <section id="skills" className="snap-center">
         <Skills skills={skills} />
       </section>
 
       {/* Contact Me */}
       <section id="contact" className="snap-center">
-        <Contact/>
+        <Contact />
       </section>
 
       <Link href="#hero">
