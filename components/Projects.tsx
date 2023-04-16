@@ -16,32 +16,37 @@ function Project({ projects }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-center mx-auto items-center"
+      className="h-screen grid text-center md:text-left  p-10  mx-auto  max-w-fit"
+
     >
-      <h3 className="absolute top-36 uppercase tracking-[20px] text-gray-500 text-2xl text-center">
+      <h3 className=" uppercase tracking-[20px] text-gray-500 text-2xl text-center">
         Projects
       </h3>
 
       {/* Maps through the array of projects */}
-      <div className="grid-container grid grid-cols-4 gap-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  justify-center">
         {projects?.map((project, i) => {
           return (
             <section key={project._id}>
               <AnimatePresence>
-                <div className="flex flex-col items-center justify-center p-2 border border-white">
+                <div className=" grid justify-center p-2 border border-white mx-auto">
                   <Image
                     className="image"
                     src={urlFor(project?.image).url()}
                     alt=""
-                    width="300"
-                    height="200"
+                  
+                    width="300px"
+                    height="250px"
+                    
+
+                   
                   />
 
                   <div className="space-y-7 max-w-6xl">
                     <h4 className="text-lg font-semibold text-center">
                       {project?.title}
                     </h4>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-around">
                       {project.technologies.map((technology) => (
                         <Image
                           className="rounded-full cursor-pointer space-x-4"
@@ -59,24 +64,24 @@ function Project({ projects }: Props) {
                     </p>
                     <div className="flex justify-around">
                       <a href={project.url}>
-                        <button className="w-[100px]  h-[35px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none ">
+                        <button className="w-[100px]  h-[35px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none mr-2">
                           Visit Site
                         </button>
-                        <button className="w-[100px]  h-[35px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none ">
+                        <button className="w-[100px]  h-[35px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none ml-2 ">
                           Source
                         </button>
                       </a>
-                      <a href={project.url}></a>
+                    
                     </div>
                   </div>
                 </div>
               </AnimatePresence>
-            </section>
+           </section>
+            
           );
         })}
         
-      </div>
-      
+     </div>
     </motion.div>
   );
 }

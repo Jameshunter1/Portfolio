@@ -15,18 +15,7 @@
     @apply bg-black;
   }
 
-  @screen sm {
-    .grid-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @screen md {
-    .grid-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
+  
   .heroButton {
     @apply w-[100px] h-[30px]  text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none ;
   }

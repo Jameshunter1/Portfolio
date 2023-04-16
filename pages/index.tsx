@@ -21,7 +21,7 @@ type Props = {
 
 const Home = ({ pageInfo, projects, skills, socials }: Props) => {
   return (
-    <div className=" text-white h-screen scroll-snap snap-y snap-mandatory overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
+    <div className=" text-white h-screen scroll-smooth  overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
       <Head>
         <link rel="icon" href="./public/images/favicon.ico" />
         <title>{pageInfo?.name} Portfolio</title>
@@ -29,26 +29,31 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
       {/* Header */}
       <Header socials={socials} />
       {/* Hero */}
-      <section id="hero" className="snap-center">
+      <section id="hero" className="scroll-smooth">
         <Hero pageInfo={pageInfo} />
       </section>
       {/* About */}
-      <section id="about" className="snap-center">
+      <section id="about" className="scroll-smooth">
         <About pageInfo={pageInfo} />
       </section>
 
       {/* Projects */}
-      <section id="projects" className="snap-center">
+      <section id="projects" className="scroll-smooth">
         <Projects projects={projects} />
       </section>
 
       {/* Skills */}
-      <section id="skills" className="snap-center">
-        <Skills skills={skills} directionLeft={false} description={""} title={""} />
+      <section id="skills" className="scroll-smooth">
+        <Skills
+          skills={skills}
+          directionLeft={false}
+          description={""}
+          title={""}
+        />
       </section>
 
       {/* Contact Me */}
-      <section id="contact" className="snap-center">
+      <section id="contact" className="scroll-smooth">
         <Contact />
       </section>
 
