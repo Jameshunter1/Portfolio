@@ -44,7 +44,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
 
       {/* Skills */}
       <section id="skills" className="snap-center">
-        <Skills skills={skills} />
+        <Skills skills={skills} directionLeft={false} description={""} title={""} />
       </section>
 
       {/* Contact Me */}
@@ -54,9 +54,9 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
 
       <Link href="#hero">
         <footer className="sticky bottom-5 ">
-          <div className="flex  items-center justify-center m-0">
+          <div className="flex  items-center justify-end mr-10">
             <Image
-              className=" rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+              className=" rounded-full filter grayscale hover:grayscale-0 cursor-pointer z-10"
               src={james}
               alt=""
               height="50"

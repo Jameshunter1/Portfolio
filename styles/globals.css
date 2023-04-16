@@ -28,7 +28,7 @@
   }
 
   .heroButton {
-    @apply px-8 py-5 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#5572af]/40 hover:text-[#5572af]/40 items-center;
+    @apply w-[100px] h-[30px]  text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none ;
   }
 
   .contactInput {

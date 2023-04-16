@@ -10,7 +10,7 @@ type Props = {
   title: string;
 };
 
-function Skills({ skills, directionLeft }: Props) {
+function Skills({ skills, directionLeft}: Props) {
   const [selectedSkill, setSelectedSkill] = useState(null as SkillType | null);
 
   const handleClick = (skill: SkillType) => {
@@ -22,24 +22,25 @@ function Skills({ skills, directionLeft }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className=" flex relative flex-col text-center md:text-left xl:flex-row  xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center"
+      className=" flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-center mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl pb-5">
+      <h3 className="absolute top-36 uppercase tracking-[20px] text-gray-500 text-2xl text-center">
         Skills
       </h3>
-      <h3 className="grid pb-4 ">
-        {" "}
-        Click on skill for a short description of it!
-      </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {skills?.map((skill) => (
-          <Skill
-            key={skill._id}
-            skill={skill}
-            onClick={() => handleClick(skill)}
-            directionLeft={directionLeft}
-          />
-        ))}
+      <div>
+        <h3 className="flex justify-center">
+          Click on skill for a short description of it!
+        </h3>
+        <div className="grid grid-cols-4 gap-6 mt-10">
+          {skills?.map((skill) => (
+            <Skill
+              key={skill._id}
+              skill={skill}
+              onClick={() => handleClick(skill)}
+              directionLeft={directionLeft}
+            />
+          ))}
+        </div>
       </div>
 
       {selectedSkill && (

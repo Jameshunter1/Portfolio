@@ -10,7 +10,7 @@ type Props = {
 
 function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="sticky top-0 p-5 flex items-start justify-between z-20 bg-[#5572af]/80 xl:justify-evenly">
       <motion.div
         initial={{
           x: -500,
@@ -37,6 +37,18 @@ function Header({ socials }: Props) {
           />
         ))}
       </motion.div>
+      <div className="flex flex-row justify-between space-x-4 pl-6 items-center">
+        <Link href="#about">
+          <button className="heroButton">About</button>
+        </Link>
+
+        <Link href="#skills">
+          <button className="heroButton">Skills</button>
+        </Link>
+        <Link href="#projects">
+          <button className="heroButton">Projects</button>
+        </Link>
+      </div>
       <Link href="#contact">
         <motion.div
           initial={{
@@ -52,32 +64,19 @@ function Header({ socials }: Props) {
           transition={{
             duration: 2,
           }}
-          className="flex flex-row items-center text-gray-300 cursor-pointer"
+          className="flex flex-row items-center
+         text-gray-300 cursor-pointer"
         >
-          <div className="pt-5 ">
-            <Link href="#about">
-              <button className="heroButton">About</button>
-            </Link>
-
-            <Link href="#skills">
-              <button className="heroButton">Skills</button>
-            </Link>
-            <Link href="#projects">
-              <button className="heroButton">Projects</button>
-            </Link>
-          </div>
-          <div className="origin-center hover:origin-bottom">
-            <SocialIcon
-              className=" cursor-pointer"
-              network="email"
-              fgColor="gray"
-              bgColor="transparent"
-            />
-            <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-              {" "}
-              Get in Touch
-            </p>
-          </div>
+          <SocialIcon
+            className=" cursor-pointer"
+            network="email"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+            {" "}
+            Get in Touch
+          </p>
         </motion.div>
       </Link>
     </header>

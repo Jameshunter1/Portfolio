@@ -27,7 +27,7 @@ export interface PageInfo extends SanityBody {
 export interface Technology extends SanityBody {
   _type: "skill";
   image: Image;
-
+  description: string;
   title: string;
 }
 export interface Skill extends SanityBody {
@@ -36,7 +36,7 @@ export interface Skill extends SanityBody {
   description: string;
   image: Image;
 
-  description: string;
+
 }
 
 export interface Project extends SanityBody {
