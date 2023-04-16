@@ -23,7 +23,7 @@ function Contact({}: Props) {
       </h3>
 
       <div className="flex flex-col relative items-center">
-        <h4 className=" text-md text-center font-semibold md:mb-12 hidden xl:flex items-center  justify-evenly">
+        <h4 className=" text-md text-center font-semibold md:mb-12 hidden xl:flex items-center justify-evenly">
           I have got just what you need.{" "}
           <span className="flex decoration-[#5572af]/50 underline ">
             {" "}
@@ -31,7 +31,7 @@ function Contact({}: Props) {
           </span>
         </h4>
 
-        <div className="flex flex-col  space-y-2 mb-20 sm:mb-0">
+        <div className="flex flex-col  md:space-y-2  sm:mb-0">
           <div className="flex space-x-5">
             <PhoneIcon className="text-[#5572af] h-7 w-7 animate-pulse" />
             <p>(905) 328-2058</p>
@@ -47,9 +47,8 @@ function Contact({}: Props) {
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col mt-10 mx-auto w-[250px] md:w-[500px] justify-between space-y-4 caret-white"
+          className="flex flex-col mt-10 mx-auto w-[250px]  md:w-[500px] justify-between md:space-y-1 caret-white"
         >
-          <label htmlFor="name"></label>
           <input
             {...register("name", { required: true })}
             placeholder="Name"
@@ -63,7 +62,6 @@ function Contact({}: Props) {
             aria-label="Name"
           />
 
-          <label htmlFor="email"></label>
           <input
             {...register("email", {
               required: true,
@@ -78,7 +76,6 @@ function Contact({}: Props) {
             aria-label="Email"
           />
 
-          <label htmlFor="subject"></label>
           <input
             {...register("subject", { required: true })}
             placeholder="Subject"
@@ -89,11 +86,10 @@ function Contact({}: Props) {
             aria-label="Subject"
           />
 
-          <label htmlFor="message"></label>
           <textarea
             {...register("message", { required: true })}
             placeholder="Message"
-            className="contactInput"
+            className="flex flex-col bg-gray-800 outline-none rounded-sm border-b py-5 border-[#242424] text-gray-50 placeholder-gray-500 transition-all focus:border-white focus:text-white hover:border-white px-3"
             minLength={10}
             required
             typeof="text"
@@ -104,7 +100,7 @@ function Contact({}: Props) {
 
           <button
             type="submit"
-            className="bg-[#5572af] py-2 md:py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-[#5572af]  md:py-5 px-10 rounded-md text-black font-bold text-lg"
           >
             Submit
           </button>

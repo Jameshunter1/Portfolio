@@ -54,16 +54,30 @@ function Header({ socials }: Props) {
           }}
           className="flex flex-row items-center text-gray-300 cursor-pointer"
         >
-          <SocialIcon
-            className=" cursor-pointer"
-            network="email"
-            fgColor="gray"
-            bgColor="transparent"
-          />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400 hover:scale-105">
-            {" "}
-            Get in Touch
-          </p>
+          <div className="pt-5 ">
+            <Link href="#about">
+              <button className="heroButton">About</button>
+            </Link>
+
+            <Link href="#skills">
+              <button className="heroButton">Skills</button>
+            </Link>
+            <Link href="#projects">
+              <button className="heroButton">Projects</button>
+            </Link>
+          </div>
+          <div className="origin-center hover:origin-bottom">
+            <SocialIcon
+              className=" cursor-pointer"
+              network="email"
+              fgColor="gray"
+              bgColor="transparent"
+            />
+            <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+              {" "}
+              Get in Touch
+            </p>
+          </div>
         </motion.div>
       </Link>
     </header>

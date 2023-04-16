@@ -2,18 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #080808;
+  --color-secondary: #5572af;
+  --color-secondary-light: rgba(36, 36, 36, 0.4);
+  --color-secondary-dark: rgba(36, 36, 36, 0.8);
+}
+
 @layer components {
   /* __next id targets the root of a next.js app */
   #__next {
     @apply bg-black;
-    background-image: url("./blackbackrground.jpg");
+  }
+
+  @screen sm {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @screen md {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .heroButton {
     @apply px-8 py-5 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#5572af]/40 hover:text-[#5572af]/40 items-center;
   }
+
   .contactInput {
-    @apply flex flex-col bg-gray-800 outline-none rounded-sm border-b py-5 border-[#242424] text-gray-50 placeholder-gray-500 transition-all focus:border-white focus:text-white hover:border-white px-3;
+    @apply flex flex-col bg-gray-800 outline-none rounded-sm border-b py-5 border-[#242424] text-gray-50 placeholder-gray-500 transition-all focus:border-white focus:text-white hover:border-white h-[30px] px-3 ;
   }
 }
 

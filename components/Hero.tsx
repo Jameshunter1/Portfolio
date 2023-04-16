@@ -19,11 +19,13 @@ type Props = {
           loop: true,
           delaySpeed: 2000,
       });
-    return (
+     return ( 
+         <>
+   
         <div className='h-screen  flex flex-col items-center space-y-8 justify-center text-center overflow-hidden'>
-            <BackgroundCircles />
             
-            <Image className='relative rounded-full mx-auto object-cover'
+            
+            <Image className='relative  mx-auto object-cover'
                 src={james}
                 alt="" 
                 height="100"
@@ -36,24 +38,13 @@ type Props = {
                 <Cursor cursorColor='#4c6ab3' />
                 </h1>
            
-                <div className='pt-5 pb-12'>
-                    <Link href="#about">       
-                <button className='heroButton'>About</button>
-                    </Link>
-                   
-                    <Link href="#skills">
-                        < button className='heroButton'>Skills</button>
-                    </Link >
-                    <Link href="#projects">
-                        < button className='heroButton'>Projects</button>
-                    </Link >           
-                </div> 
+               
                        
                   
                     
                 </div>
             </div>
-           
+           </>
 
     );
 }
