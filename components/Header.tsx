@@ -33,7 +33,7 @@ function Header({ socials }: Props) {
             key={social._id}
             url={social.url}
             fgColor="white"
-            className="flex flex-col justify-between space-x-3 animate-pulse cursor-pointer text-white rounded-lg shadow-md hover:bg-gray-800 "
+            className="flex flex-col justify-between space-x-3 animate-pulse cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
           />
         ))}
       </motion.div>
@@ -68,7 +68,7 @@ function Header({ socials }: Props) {
          text-gray-300 cursor-pointer"
         >
           <SocialIcon
-            className=" cursor-pointer  text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none"
+            className="cursor-pointer text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 mr-3 focus:outline-none"
             network="email"
             fgColor="white"
             bgColor="transparent"

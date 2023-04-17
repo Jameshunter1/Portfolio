@@ -5,7 +5,7 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Projects from "../components/Projects";
+import ProjectCarousel from "../components/ProjectCarousel";
 import Skills from "../components/Skills";
 import { PageInfo, Project, Skill, Social } from "../typings";
 import james from "/styles/james.png";
@@ -39,7 +39,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
 
       {/* Projects */}
       <section id="projects" className="scroll-smooth">
-        <Projects projects={projects} />
+        <ProjectCarousel projects={projects} />
       </section>
 
       {/* Skills */}
