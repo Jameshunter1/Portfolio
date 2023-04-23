@@ -33,7 +33,10 @@ function Header({ socials }: Props) {
             key={social._id}
             url={social.url}
             fgColor="white"
-            className="flex flex-col justify-between space-x-3 animate-pulse cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
+            className="flex flex-col justify-between space-x-3
+            hover:scale-110
+            
+            cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
           />
         ))}
       </motion.div>

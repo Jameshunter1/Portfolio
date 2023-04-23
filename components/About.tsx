@@ -10,14 +10,14 @@ type Props = {
 function About({ pageInfo }: Props) {
   return (
     <>
-    <div className="flex  bg-[#5572af]/40  justify-center ">
+    <div className="flex   justify-center ">
       <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="h-screen flex flex-col text-center px-10 justify-center mx-auto items-center "
     >
-      <h3 className=" uppercase tracking-[20px] text-gray-500 text-2xl text-center">
+      <h3 className=" uppercase tracking-[20px] text-gray-500 text-2xl text-center p-[120px]">
         About
       </h3>
       
