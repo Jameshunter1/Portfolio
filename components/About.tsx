@@ -10,7 +10,7 @@ type Props = {
 function About({ pageInfo }: Props) {
   return (
     <>
-    <div className="flex   justify-center ">
+    <div className="flex justify-center ">
       <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -32,7 +32,7 @@ function About({ pageInfo }: Props) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           src={urlFor(pageInfo.profilePic).url()}
-          className="flex flex-col md:flex-row w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover rounded-full md:rounded-none "
+          className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover rounded-full md:rounded-none border-4 border-gray-500 shadow-md "
         />
         <div className="space-y-4 md:p-10 items-center mt-10 ">
           <h4 className="text-2xl md:text-4xl font-semibold">

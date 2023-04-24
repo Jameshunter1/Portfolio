@@ -10,7 +10,7 @@ type Props = {
 
 function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 p-5 flex justify-between z-20 bg-[#5572af]/80 xl:justify-evenly">
+    <header className="sticky top-0 p-5 flex  z-20 bg-[#5572af]/80 justify-evenly">
       <motion.div
         initial={{
           x: -500,
@@ -25,7 +25,7 @@ function Header({ socials }: Props) {
         transition={{
           duration: 2,
         }}
-        className="flex flex-row items-center space-x-4"
+        className="flex flex-row items-center space-x-1 md:space-x-4"
       >
         {/* Social Icons */}
         {socials?.map((social) => (
@@ -33,14 +33,14 @@ function Header({ socials }: Props) {
             key={social._id}
             url={social.url}
             fgColor="white"
-            className="flex flex-col justify-between space-x-3
+            className="flex flex-col justify-between items-center w-8 h-8 md:w-10 md:h-10 bg-gray-900 rounded-full
             hover:scale-110
-            
+
             cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
           />
         ))}
       </motion.div>
-      <div className="flex flex-row justify-between space-x-4 pl-6 items-center">
+      <div className="flex flex-row justify-between space-x-1 md:space-x-4 md:pl-6 items-center">
         <Link href="#about">
           <button className="heroButton">About</button>
         </Link>
@@ -71,7 +71,7 @@ function Header({ socials }: Props) {
          text-gray-300 cursor-pointer"
         >
           <SocialIcon
-            className="cursor-pointer text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 mr-3 focus:outline-none"
+            className="cursor-pointer text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800  focus:outline-none"
             network="email"
             fgColor="white"
             bgColor="transparent"
