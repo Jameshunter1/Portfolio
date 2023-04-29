@@ -21,27 +21,22 @@ type Props = {
 
 const Home = ({ pageInfo, projects, skills, socials }: Props) => {
   return (
-    <div className=" text-white h-screen scroll-smooth  overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
+    <div className=" text-white h-screen  scroll scroll-smooth overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
       <Head>
         <link rel="icon" href="./public/images/favicon.ico" />
         <title>{pageInfo?.name} Portfolio</title>
       </Head>
       {/* Header */}
       <Header socials={socials} />
+
       {/* Hero */}
-      <section id="hero" className="scroll-smooth">
+      <section id="hero" className=" scroll-smooth">
         <Hero pageInfo={pageInfo} />
       </section>
       {/* About */}
       <section id="about" className="scroll-smooth">
         <About pageInfo={pageInfo} />
       </section>
-
-      {/* Projects */}
-      <section id="projects" className="scroll-smooth">
-        <ProjectCarousel projects={projects} />
-      </section>
-
       {/* Skills */}
       <section id="skills" className="scroll-smooth">
         <Skills
@@ -52,14 +47,23 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
         />
       </section>
 
+      {/* Projects */}
+      <section id="projects" className="scroll-smooth">
+        <ProjectCarousel projects={projects} />
+      </section>
+
       {/* Contact Me */}
       <section id="contact" className="scroll-smooth">
         <Contact />
       </section>
 
       <Link href="#hero">
-        <footer className="sticky bottom-5 ">
-          <div className="flex  items-center justify-end mr-10">
+        <footer className="fixed bottom-5 right-10">
+          <div
+            onClick={() => {
+              window.location.href = "#hero";
+            }}
+          >
             <Image
               className=" rounded-full filter grayscale hover:grayscale-0 cursor-pointer z-10"
               src={james}

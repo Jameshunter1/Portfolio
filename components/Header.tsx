@@ -1,4 +1,3 @@
-import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -10,7 +9,7 @@ type Props = {
 
 function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 p-5 flex  z-20 bg-[#5572af]/80 justify-evenly">
+    <header className="sticky top-0 p-3 flex justify-evenly">
       <motion.div
         initial={{
           x: -500,
@@ -44,7 +43,6 @@ function Header({ socials }: Props) {
         <Link href="#about">
           <button className="heroButton">About</button>
         </Link>
-
         <Link href="#skills">
           <button className="heroButton">Skills</button>
         </Link>
@@ -68,15 +66,16 @@ function Header({ socials }: Props) {
             duration: 2,
           }}
           className="flex flex-row items-center
-         text-gray-300 cursor-pointer"
+         text-gray-300 cursor-pointer space-x-1 hover:bg-gray-800 rounded-full"
         >
           <SocialIcon
-            className="cursor-pointer text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800  focus:outline-none"
+            className="cursor-pointer text-white hover:bg-gray-800 bg-gray-900 shadow-md rounded-full focus:outline-none "
             network="email"
             fgColor="white"
             bgColor="transparent"
           />
-          <p className="uppercase hidden md:inline-flex text-sm text-white">
+
+          <p className="uppercase hidden md:inline-flex text-sm text-white p-2">
             {" "}
             Get in Touch
           </p>

@@ -46,7 +46,7 @@ export interface Project extends SanityBody {
   title: string;
   technologies: Technology[];
   url: string;
-  url: string;
+  sourceCodeUrl: string;
 }
 
 export interface Social extends SanityBody {
