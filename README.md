@@ -42,14 +42,6 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 
 ##  Getting Started
 
-First, run the development server:
-
-```
-npm run dev
-```
-
-Open http://localhost:3000 with your browser to see the result.
-
 You can start editing the page by modifying pages/index.js. The page auto-updates as you edit the file.
 
 API routes can be accessed on http://localhost:3000/api/hello. This endpoint can be edited in pages/api/hello.js.
