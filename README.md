@@ -34,77 +34,10 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 ## Features
 
  - Implemented the contact form functionality, allowing users to submit their information and open their local email app with pre-populated fields for easy sending.
- - Automated deployment and continuous integration using Vercel
- - Server-side rendering for improved performance and SEO
- - Integration with Sanity.io content management system for easy content updates
+ - Automated deployment and continuous integration using Vercel.
+ - Server-side rendering for improved performance and SEO.
+ - Integration with Sanity.io content management system for easy content updates.
  
-
-## Folder Structure
-
-The folder structure for this project is as follows:
-
-Portfolio/
-
- components/
-  - About.ts
-  - BackgroundCircles.ts
-  - Contact.ts
-  - Header.ts
-  - Hero.ts
-  - Projects.ts
-  - Skill.ts
-  - Skills.ts
-
- node_modules/
-
- pages/
-  - api
-  - _app.ts
-  - index.ts
- 
- sanity/
-  - config/
-  - dist/
-  - node_modules/
-  - plugins/
-  - schemas/
-  - static/
-  - eslintrc
-  -.npmignore
-  - package.json
-  - package-lock.json
-  - README.md
-  - sanity
-  - tsconfig
- 
- styles/
-  - blackbackground.png
-  - globals.css
-  - james.png
- 
- utils/
-  - fetchPageInfo/
-  - fetchProjects/
-  - fetchSkills/
-  - fetchSocials/
- 
- .env
-
- .env.example
-
- .env.production
-
- next.config
-
- next-env.d
-
- package.json
-
- package-lock.json
-
- postcss.config
-
- README.md
 
 
 ##  Getting Started
