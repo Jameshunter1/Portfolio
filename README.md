@@ -44,15 +44,9 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 
 First, run the development server:
 
+```
 npm run dev
-
- or
- 
-yarn dev
-
- or
- 
-pnpm dev
+```
 
 Open http://localhost:3000 with your browser to see the result.
 
@@ -68,6 +62,7 @@ This project uses next/font to automatically optimize and load Inter, a custom G
 To learn more about Next.js, take a look at the following resources:
 
 ## Next.js Documentation - learn about Next.js features and API.
+
 Learn Next.js - an interactive Next.js tutorial.
 You can check out the Next.js GitHub repository - your feedback and contributions are welcome!
 
@@ -85,6 +80,3 @@ To configure Sanity.io, you will need to create a free account and set up a new 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Sanity.io](https://www.sanity.io/)
 - [Create Next App](https://nextjs.org/docs/api-reference/create-next-app)
-- License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
