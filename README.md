@@ -34,94 +34,13 @@ Make sure you have Node.js and npm installed on your system before proceeding.
 ## Features
 
  - Implemented the contact form functionality, allowing users to submit their information and open their local email app with pre-populated fields for easy sending.
- - Automated deployment and continuous integration using Vercel
- - Server-side rendering for improved performance and SEO
- - Integration with Sanity.io content management system for easy content updates
+ - Automated deployment and continuous integration using Vercel.
+ - Server-side rendering for improved performance and SEO.
+ - Integration with Sanity.io content management system for easy content updates.
  
-
-## Folder Structure
-
-The folder structure for this project is as follows:
-
-Portfolio/
-
- components/
-  - About.ts
-  - BackgroundCircles.ts
-  - Contact.ts
-  - Header.ts
-  - Hero.ts
-  - Projects.ts
-  - Skill.ts
-  - Skills.ts
-
- node_modules/
-
- pages/
-  - api
-  - _app.ts
-  - index.ts
- 
- sanity/
-  - config/
-  - dist/
-  - node_modules/
-  - plugins/
-  - schemas/
-  - static/
-  - eslintrc
-  -.npmignore
-  - package.json
-  - package-lock.json
-  - README.md
-  - sanity
-  - tsconfig
- 
- styles/
-  - blackbackground.png
-  - globals.css
-  - james.png
- 
- utils/
-  - fetchPageInfo/
-  - fetchProjects/
-  - fetchSkills/
-  - fetchSocials/
- 
- .env
-
- .env.example
-
- .env.production
-
- next.config
-
- next-env.d
-
- package.json
-
- package-lock.json
-
- postcss.config
-
- README.md
 
 
 ##  Getting Started
-
-First, run the development server:
-
-npm run dev
-
- or
- 
-yarn dev
-
- or
- 
-pnpm dev
-
-Open http://localhost:3000 with your browser to see the result.
 
 You can start editing the page by modifying pages/index.js. The page auto-updates as you edit the file.
 
@@ -135,6 +54,7 @@ This project uses next/font to automatically optimize and load Inter, a custom G
 To learn more about Next.js, take a look at the following resources:
 
 ## Next.js Documentation - learn about Next.js features and API.
+
 Learn Next.js - an interactive Next.js tutorial.
 You can check out the Next.js GitHub repository - your feedback and contributions are welcome!
 
@@ -152,6 +72,3 @@ To configure Sanity.io, you will need to create a free account and set up a new 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Sanity.io](https://www.sanity.io/)
 - [Create Next App](https://nextjs.org/docs/api-reference/create-next-app)
-- License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
