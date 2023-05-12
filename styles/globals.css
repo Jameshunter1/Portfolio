@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-primary: #080808;
-  --color-secondary: #5572af;
-  --color-secondary-light: rgba(36, 36, 36, 0.4);
-  --color-secondary-dark: rgba(36, 36, 36, 0.8);
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer components {

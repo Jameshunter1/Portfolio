@@ -33,7 +33,7 @@ function Skills({ skills, directionLeft }: Props) {
         </h3>
       </div>
       <motion.div
-        className="grid grid-cols-4 gap-6 items-center justify-center"
+        className="grid grid-cols-3 md:grid-cols-6 gap-10 items-center justify-center"
         initial="hidden"
         animate="visible"
         variants={{

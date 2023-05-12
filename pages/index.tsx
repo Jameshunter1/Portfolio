@@ -23,7 +23,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
   return (
     <div className=" text-white h-screen  scroll scroll-smooth overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
       <Head>
-        <link rel="icon" href="./public/images/favicon.ico" />
+       
         <title>{pageInfo?.name} Portfolio</title>
       </Head>
       {/* Header */}
