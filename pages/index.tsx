@@ -29,7 +29,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
   };
 
   return (
-    <div className=" text-white h-screen  scroll scroll-smooth overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
+    <div className=" text-white h-screen scroll-smooth overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
       <Head>
         <title>{pageInfo?.name} Portfolio</title>
       </Head>

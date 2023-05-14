@@ -10,12 +10,10 @@ type Props = {
   showMenu: boolean;
 };
 
-function Header({ socials , isSmallScreen, toggleMenu, showMenu}: Props) {
+function Header({ socials , toggleMenu, showMenu}: Props) {
  
-
-  
   const links = (
-    <>,
+    <>
       <Link href="#about">
         <button className="heroButton ">About</button>
       </Link>
@@ -42,25 +40,24 @@ function Header({ socials , isSmallScreen, toggleMenu, showMenu}: Props) {
   );
 
   return (
-    <header className="sticky top-0 p-3 flex justify-between items-center">
-      <div className="flex flex-row items-center space-x-1 md:space-x-4">
+    <header className="sticky top-0 p-3 flex justify-between items-center z-10">
+      <div className="flex flex-row items-center space-x-4 pl-5">
         {socials?.map((social) => (
           <SocialIcon
             key={social._id}
             url={social.url}
             fgColor="white"
-            className="flex flex-col justify-between items-center w-6 h-6 md:w-10 md:h-10 bg-gray-900 rounded-full
-            hover:scale-110
-            cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
+            className="flex flex-col justify-between items-center bg-gray-900 rounded-full
+            hover:scale-110 cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
           />
         ))}
       </div>
 
       <div className="hidden md:block">
-        <nav className="flex space-x-8">{links}</nav>
+        <nav className="flex space-x-8 ">{links}</nav>
       </div>
 
-      <div className="md:hidden pr-16">
+      <div className="md:hidden pr-5">
         <button onClick={toggleMenu} aria-label="Toggle Menu">
           <svg
             xmlns="http://www.w3.org/2000/svg"

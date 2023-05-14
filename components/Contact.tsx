@@ -82,7 +82,7 @@ function Contact({}: Props) {
             {...register("message", { required: true })}
             placeholder="Message"
             className="flex flex-col bg-gray-800 outline-none rounded-sm border-b py-5 border-[#242424] text-gray-50 placeholder-gray-500 transition-all focus:border-white focus:text-white hover:border-white px-3"
-            minLength={10}
+            minLength={1}
             required
             typeof="text"
             id="message"

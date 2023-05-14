@@ -26,9 +26,9 @@ function ProjectCarousel({ projects }: Props) {
         Projects
       </h3>
 
-      <div className="flex  items-center justify-center">
+      <div className="flex justify-center items-center pt-10">
         <button
-          className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none items-center"
+          className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none "
           onClick={prevProject}
         >
           <svg
@@ -50,7 +50,7 @@ function ProjectCarousel({ projects }: Props) {
           </h4>
 
           <div
-            className="top-0 h-full w-full bg-contain bg-center bg-no-repeat "
+            className="h-full w-full bg-contain bg-center bg-no-repeat p-10"
             style={{
               backgroundImage: `url(${urlFor(
                 projects[currentProject].image
@@ -58,7 +58,7 @@ function ProjectCarousel({ projects }: Props) {
             }}
           />
       
-        <div className="flex justify-around py-5">
+        <div className="flex justify-around p-10">
           {projects[currentProject].technologies.map((technology) => (
             <Image
               className="rounded-full cursor-pointer hover:opacity-80"
