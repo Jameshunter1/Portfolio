@@ -11,6 +11,7 @@ import { PageInfo, Project, Skill, Social } from "../typings";
 import james from "/styles/james.png";
 import { sanityClient } from "../sanity";
 import { groq } from "next-sanity";
+import { useState } from "react";
 
 type Props = {
   pageInfo: PageInfo;
@@ -20,14 +21,25 @@ type Props = {
 };
 
 const Home = ({ pageInfo, projects, skills, socials }: Props) => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div className=" text-white h-screen  scroll scroll-smooth overflow-y-scroll w-25 overflow-x-hidden scrollbar  scrollbar-thumb-[#5572af]/40">
       <Head>
-       
         <title>{pageInfo?.name} Portfolio</title>
       </Head>
       {/* Header */}
-      <Header socials={socials} />
+      <Header
+        socials={socials}
+        isSmallScreen={isSmallScreen}
+        toggleMenu={toggleMenu}
+        showMenu={showMenu}
+      />
 
       {/* Hero */}
       <section id="hero" className=" scroll-smooth">
@@ -58,12 +70,8 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
       </section>
 
       <Link href="#hero">
-        <footer className="fixed bottom-5 right-10">
-          <div
-            onClick={() => {
-              window.location.href = "#hero";
-            }}
-          >
+        <footer className="fixed bottom-5 right-12">
+          
             <Image
               className=" rounded-full filter grayscale hover:grayscale-0 cursor-pointer z-10"
               src={james}
@@ -71,7 +79,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
               height="50"
               width="50"
             />
-          </div>
+         
         </footer>
       </Link>
     </div>
