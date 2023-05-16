@@ -70,14 +70,14 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
       </section>
 
       <Link href="#hero">
-        <footer className="fixed bottom-5 right-12">
+        <footer className="fixed bottom-5 right-8">
           
             <Image
-              className=" rounded-full filter grayscale hover:grayscale-0 cursor-pointer z-10"
+              className="rounded-full filter grayscale hover:grayscale-0 cursor-pointer z-10"
               src={james}
               alt=""
-              height="50"
-              width="50"
+              height="40"
+              width="40"
             />
          
         </footer>

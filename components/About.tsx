@@ -10,17 +10,17 @@ type Props = {
 function About({ pageInfo }: Props) {
   return (
     <>
-      <div className="h-screen flex flex-col text-center items-center  ">
+      <div className="h-screen flex flex-col text-center items-center  pt-[120px]">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
         className=""
       >
-        <h3 className=" uppercase tracking-[20px] text-gray-500 text-2xl text-center p-[120px]">
+        <h3 className=" uppercase tracking-[20px] text-gray-500 text-2xl text-center mb-10">
           About
         </h3>
-        <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-10">
+        <div className="flex flex-col md:flex-row items-center justify-center md:space-x-10">
           <motion.img
             initial={{
               x: -200,
@@ -32,15 +32,15 @@ function About({ pageInfo }: Props) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             src={urlFor(pageInfo.profilePic).url()}
-            className=" flex flex-col w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover rounded-full md:rounded-none border-4 border-gray-500 shadow-md "
+            className=" flex flex-col w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover rounded-full md:rounded-none border-2 border-gray-500 shadow-md "
           />
-          <div className="space-y-4 md:p-10 items-center mt-10  ">
-            <h4 className="text-2xl md:text-4xl font-semibold">
+          <div className="space-y-4 p-10 items-center mt-5 md:mt-7">
+            <h4 className="text-xl md:text-4xl font-semibold">
               Here is a{" "}
               <span className="underline decoration-[#5572af]/50">little</span>{" "}
               background
             </h4>
-            <p className="flex text-[14px] md:text-base md:text-[16px] leading-6 md:leading-8 max-w-[400px] justify-center">
+            <p className="flex text-[12px] md:text-base md:text-[16px] leading-6 md:leading-8 max-w-[400px] justify-center">
               {pageInfo.backgroundInformation}
             </p>
           </div>

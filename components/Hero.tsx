@@ -1,10 +1,8 @@
 import Image from 'next/image';
-import React from 'react'
-import { Cursor, useTypewriter } from "react-simple-typewriter"
-import james from "../styles/james.png"
-import Link from 'next/link';
+import React from 'react';
+import { useTypewriter,  Cursor } from 'react-simple-typewriter'
+import james from "../styles/james.png";
 import { PageInfo } from '../typings';
-import { urlFor } from '../sanity';
 
 
 
@@ -13,17 +11,17 @@ type Props = {
 };
 
  function Hero({pageInfo}: Props) { 
-      const [text, count] = useTypewriter({
+      const [text] = useTypewriter({
         words: [`Hey, I'm ${pageInfo?.name}`, `Software Engineer`],
         loop: 0,
      
-        deleteSpeed: 50,
-        typeSpeed: 60,
+        deleteSpeed: 90,
+        typeSpeed: 100,
 
       });
      return (
        <>
-         <div className="h-screen flex flex-col relative text-center justify-center mx-auto items-center space-y-16">
+         <div className="h-screen flex flex-col text-center mx-auto items-center space-y-24 justify-center">
            <Image
              className="relative object-cover"
              src={james}
@@ -32,12 +30,12 @@ type Props = {
              width="100"
            />
            <div>
-             <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
+             <h2 className="text-sm uppercase text-gray-500  tracking-[15px] py-7">
                {pageInfo?.role}
              </h2>
-             <h1 className="text-5xl lg:text-6xl font-semibold ">
+             <h1 className="text-2xl lg:text-6xl font-semibold ">
                <span>{text}</span>
-               <Cursor cursorColor="#4c6ab3" />
+               <Cursor  />
              </h1>
            </div>
          </div>

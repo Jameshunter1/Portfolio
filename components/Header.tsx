@@ -24,7 +24,7 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
         <button className="heroButton ">Projects</button>
       </Link>
       <Link href="#contact">
-        <a className="flex flex-row items-center text-gray-300 cursor-pointer space-x-1 hover:bg-gray-800 rounded-full">
+        <button className="flex flex-row items-center text-gray-300 cursor-pointer space-x-1 hover:bg-gray-800 rounded-full">
           <SocialIcon
             network="email"
             fgColor="white"
@@ -33,8 +33,8 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
             cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
           />
 
-          <span>Contact</span>
-        </a>
+          <span className="px-2">Contact</span>
+        </button>
       </Link>
     </>
   );

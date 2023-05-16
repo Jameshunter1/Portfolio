@@ -1,5 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
+import React from "react";
+
 import { Skill } from "../typings";
 import { urlFor } from "../sanity";
 
@@ -12,7 +13,7 @@ type Props = {
 function Skill({ skill, onClick }: Props) {
   return (
     <div
-      className="cursor-pointer items-center justify-center"
+      className="cursor-pointer text-center flex items-center"
       onClick={onClick}
     >
       <motion.img

@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import React, { useState } from "react";
+import {motion} from "framer-motion"
+import React,  { useState } from "react";
 import Skill from "./Skill";
 import { Skill as SkillType } from "../typings";
 
@@ -17,23 +17,25 @@ function Skills({ skills, directionLeft }: Props) {
     setSelectedSkill(skill);
   };
 
+
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="h-screen flex flex-col  text-center px-10 items-center"
+      className="h-screen flex flex-col text-center items-center pt-[120px]"
     >
-      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl text-center pt-[120px]">
+      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl text-center ">
         Skills
       </h3>
-      <div>
-        <h3 className="flex  m-20">
+     
+        <h3 className="flex my-[50px]">
           Click on skill for a short description of it!
         </h3>
-      </div>
+      
       <motion.div
-        className="grid grid-cols-3 md:grid-cols-6 gap-10 items-center justify-center"
+        className="grid grid-cols-4 md:grid-cols-8 gap-4 sm:gap-6 md:gap-8 "
         initial="hidden"
         animate="visible"
         variants={{
@@ -61,17 +63,21 @@ function Skills({ skills, directionLeft }: Props) {
           </motion.div>
         ))}
       </motion.div>
-
       {selectedSkill && (
+        <>
+              <div
+           className="flex justify-center"
+        
+          />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-10"
+          className=" bg-black bg-opacity-50 z-2 rounded-full items-center"
           onClick={() => setSelectedSkill(null)}
         >
           <motion.div
-            className="bg-white p-4 rounded max-w-lg mx-auto text-center z-10 transition-shadow duration-300"
+            className="bg-white p-4 rounded max-w-lg mx-auto text-center z-1 transition-shadow duration-300  items-center"
             style={{ boxShadow: "0 0 15px 0 rgba(0, 0, 0, 0.2)" }}
             onClick={(e) => e.stopPropagation()}
             initial={{ y: -100 }}
@@ -90,7 +96,7 @@ function Skills({ skills, directionLeft }: Props) {
             </button>
           </motion.div>
         </motion.div>
-      )}
+      </>)}
     </motion.div>
   );
 }
