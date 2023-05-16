@@ -24,30 +24,29 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
         <button className="heroButton ">Projects</button>
       </Link>
       <Link href="#contact">
-        <button className="flex flex-row items-center text-gray-300 cursor-pointer space-x-1 hover:bg-gray-800 rounded-full">
+        <button className="flex flex-row text-gray-300 cursor-pointer space-x-5 hover:bg-gray-800 rounded-full items-center h-[40px]">
           <SocialIcon
             network="email"
             fgColor="white"
-            className="flex flex-col justify-between items-center w-6 h-6 md:w-10 md:h-10 bg-gray-900 rounded-full
-            hover:scale-110
-            cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
+            className=" bg-gray-900 rounded-full
+            hover:scale-110 cursor-pointer text-white  shadow-md hover:bg-gray-800"
           />
 
-          <span className="px-2">Contact</span>
+          <span className="pr-5 items-center flex justify-center" >Contact</span>
         </button>
       </Link>
     </>
   );
 
   return (
-    <header className="sticky top-0 p-3 flex justify-between items-center z-10">
-      <div className="flex flex-row items-center space-x-4 pl-5">
+    <header className="sticky top-0 p-3 flex justify-around z-10 items-center">
+      <div className="flex flex-row space-x-4 pl-5">
         {socials?.map((social) => (
           <SocialIcon
             key={social._id}
             url={social.url}
             fgColor="white"
-            className="flex flex-col justify-between items-center bg-gray-900 rounded-full
+            className="flex flex-col justify-between bg-gray-900 rounded-full
             hover:scale-110 cursor-pointer text-white  shadow-md hover:bg-gray-800 hover:rounded-full focus:outline-none "
           />
         ))}
@@ -76,7 +75,7 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
         </button>
 
         {showMenu && (
-          <div className="absolute top-16 right-10 z-50 bg-gray-900 text-white">
+          <div className="absolute top-16 right-10 z-50 bg-gray-900 text-white rounded-xl">
             <nav className="flex flex-col space-y-4 p-4">{links}</nav>
           </div>
         )}

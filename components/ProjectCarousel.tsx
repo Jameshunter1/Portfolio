@@ -44,7 +44,7 @@ function ProjectCarousel({ projects }: Props) {
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
-        <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[300px]">
+        <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[300px] ">
           <h4 className="text-lg font-semibold text-center  ">
             {projects[currentProject].title}
           </h4>
@@ -70,12 +70,12 @@ function ProjectCarousel({ projects }: Props) {
               />
             ))}
           </div>
-          <div className="flex flex-col  ">
-            <p className=" text-center text-xs sm:text-sm md:text-left text-white max-w-lg">
+          <div className="flex flex-col  mt-6">
+            <p className="  text-sm text-left text-white max-w-lg">
               {projects[currentProject].summary}
             </p>
 
-            <div className="flex justify-evenly">
+            <div className="flex justify-evenly ">
               <a href={projects[currentProject].url}>
                 <button className="w-[100px] h-[35px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
                   Visit Site
