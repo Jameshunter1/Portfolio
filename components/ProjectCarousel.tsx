@@ -21,16 +21,15 @@ function ProjectCarousel({ projects }: Props) {
 
   
   return (
-    <div className="h-screen flex  flex-col pt-[120px]">
-      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl  justify-center flex">
+    <div className="h-screen flex  flex-col pt-[120px] ">
+      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl flex justify-center">
         Projects
       </h3>
 
-      <div className="flex justify-center pt-10 items-center">
-        <button
-          className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none flex justify-around items-center "
+      <div className="flex  items-center justify-around">
+        <button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none mt-40 " 
           onClick={prevProject}
-        >
+>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -44,8 +43,8 @@ function ProjectCarousel({ projects }: Props) {
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
-        <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[300px] ">
-          <h4 className="text-lg font-semibold text-center  ">
+        <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[300px] bg-gray-800 bg-opacity-40">
+          <h4 className="text-lg font-semibold text-center  md:p-10">
             {projects[currentProject].title}
           </h4>
 
@@ -58,7 +57,7 @@ function ProjectCarousel({ projects }: Props) {
             }}
           />
 
-          <div className="flex justify-around p-5">
+          <div className="flex justify-around p-2 md:p-4">
             {projects[currentProject].technologies.map((technology) => (
               <Image
                 className="rounded-full cursor-pointer hover:opacity-80"
@@ -70,12 +69,12 @@ function ProjectCarousel({ projects }: Props) {
               />
             ))}
           </div>
-          <div className="flex flex-col  mt-6">
-            <p className="  text-sm text-left text-white max-w-lg">
+          <div className="mt-6">
+            <p className=" text-sm text-left text-white max-w-lg tracking-wide bg-gray-700 border border-white p-2 md:visible">
               {projects[currentProject].summary}
             </p>
 
-            <div className="flex justify-evenly ">
+            <div className="flex justify-between p-10">
               <a href={projects[currentProject].url}>
                 <button className="w-[100px] h-[35px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
                   Visit Site
@@ -90,7 +89,7 @@ function ProjectCarousel({ projects }: Props) {
           </div>
         </div>
         <button
-          className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none flex justify-around items-center "
+          className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none mt-40 items-center "
           onClick={nextProject}
         >
           <svg

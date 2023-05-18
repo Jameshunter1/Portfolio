@@ -23,7 +23,7 @@ function Contact({}: Props) {
       </h3>
 
       <div className="flex flex-col items-center">
-        <div className="flex flex-col md:space-y-10">
+        <div className="flex flex-col space-y-2 md:space-y-12">
           <div className="flex space-x-5">
             <PhoneIcon className="text-[#5572af] h-7 w-7 animate-pulse" />
             <p>(905) 328-2058</p>
@@ -92,7 +92,7 @@ function Contact({}: Props) {
 
           <button
             type="submit"
-            className="bg-[#5572af]  py-4 rounded-md text-black font-bold text-lg"
+            className="bg-[#5572af] hover:bg-gray-500 py-4 rounded-md text-black font-bold text-lg"
           >
             Submit
           </button>
