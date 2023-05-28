@@ -23,7 +23,7 @@ function Contact({}: Props) {
       </h3>
 
       <div className="flex flex-col items-center">
-        <div className="flex flex-col space-y-2 md:space-y-12">
+        <div className="flex flex-col space-y-10 md:space-y-12">
           <div className="flex space-x-5">
             <PhoneIcon className="text-[#5572af] h-7 w-7 animate-pulse" />
             <p>(905) 328-2058</p>
@@ -39,7 +39,7 @@ function Contact({}: Props) {
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col mt-10 mx-auto w-[230px] sm:w-[300px] md:w-[500px]  space-y-1 md:space-y-2 justify-items-center caret-white z-20"
+          className="flex flex-col mt-16 mx-auto w-[230px] sm:w-[300px] md:w-[500px]  space-y-2 justify-items-center caret-white z-20"
         >
           <input
             {...register("name", { required: true })}

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
 import { Social } from "../typings";
@@ -24,14 +23,16 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
         <a className="heroButton ">Projects</a>
       </Link>
       <Link href="#contact">
-       
+       <div className="heroButton cursor-pointer">
           <SocialIcon
             network="email"
           fgColor="white"
-       
-            className="cursor-pointer text-white shadow-md bg-gray-500 hover:bg-gray-800 rounded-full"   
-          />
           
+            className="cursor-pointer text-white shadow-md bg-gray-500 hover:bg-gray-800 rounded-full"   
+        ></SocialIcon>
+       Contact
+          </div>
+         
           
         
       </Link>
@@ -56,7 +57,7 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
         <nav className="flex space-x-8 ">{links}</nav>
       </div>
 
-      <div className="md:hidden pr-5">
+      <div className="md:hidden pr-4">
         <button onClick={toggleMenu} aria-label="Toggle Menu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +76,7 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
         </button>
 
         {showMenu && (
-          <div className="absolute top-16 right-10 z-50 bg-gray-900 text-white text-left">
+          <div className="absolute top-16 right-5 z-50 bg-gray-900 text-white text-left">
             <nav className="flex flex-col space-y-4 p-4 text-left">{links}</nav>
           </div>
         )}
