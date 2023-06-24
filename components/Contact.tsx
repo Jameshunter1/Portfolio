@@ -17,13 +17,13 @@ function Contact({}: Props) {
     window.location.href = `mailto:james.hunter0423@gmail.com?subject=${formData.subject}& body=Hi, my name is ${formData.name}.${formData.message}(${formData.email})`;
   };
   return (
-    <div className="h-screen flex flex-col text-center md:flex-flow  mx-auto pt-[120px]">
+    <div className="h-screen flex flex-col text-center  mx-auto justify-center">
       <h3 className=" uppercase tracking-[20px] text-gray-500 text-2xl text-center mb-[50px]">
         Contact
       </h3>
 
-      <div className="flex flex-col items-center">
-        <div className="flex flex-col space-y-10 md:space-y-12">
+      <div className="flex flex-col items-center ">
+        <div className="flex flex-col space-y-10 md:space-y-12 justify-items-center">
           <div className="flex space-x-5">
             <PhoneIcon className="text-[#5572af] h-7 w-7 animate-pulse" />
             <p>(905) 328-2058</p>
@@ -39,7 +39,7 @@ function Contact({}: Props) {
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col mt-16 mx-auto w-[230px] sm:w-[300px] md:w-[500px]  space-y-2 justify-items-center caret-white z-20"
+          className="flex flex-col mt-16 mx-auto w-[230px] sm:w-[300px] md:w-[500px]  space-y-2 justify-center caret-white z-20"
         >
           <input
             {...register("name", { required: true })}

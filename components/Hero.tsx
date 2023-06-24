@@ -12,16 +12,16 @@ type Props = {
 
  function Hero({pageInfo}: Props) { 
       const [text] = useTypewriter({
-        words: [`Hey, I'm ${pageInfo?.name}`, `Software Engineer`],
+        words: [`Hey, I'm ${pageInfo?.name}`, `Data Analyst`],
         loop: 0,
      
-        deleteSpeed: 90,
+        deleteSpeed:50,
         typeSpeed: 100,
 
       });
      return (
        <>
-         <div className="h-screen flex flex-col text-center mx-auto items-center space-y-24 justify-center">
+         <div className="h-screen flex flex-col text-center mx-auto items-center space-y-20 justify-center">
            <Image
              className="relative object-cover"
              src={james}

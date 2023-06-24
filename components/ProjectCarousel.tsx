@@ -8,8 +8,15 @@ type Props = {
   projects: Project[];
 };
 
+enum Tab {
+  Development,
+  Analysis,
+}
+
 function ProjectCarousel({ projects }: Props) {
   const [currentProject, setCurrentProject] = useState(0);
+    const [currentTab, setCurrentTab] = useState(Tab.Development);
+
 
   const nextProject = () => {
     setCurrentProject((currentProject + 1) % projects.length);
@@ -19,14 +26,43 @@ function ProjectCarousel({ projects }: Props) {
     setCurrentProject((currentProject + projects.length - 1) % projects.length);
   };
 
-  
+   const handleTabChange = (tab: Tab) => {
+    setCurrentTab(tab);
+  };
   return (
-    <div className="h-screen flex  flex-col pt-[120px] ">
-      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl flex justify-center">
+    <><h3 className="uppercase tracking-[20px] text-gray-500 text-2xl flex justify-center pt-[120px]">
         Projects
-      </h3>
-
-      <div className="flex  items-center justify-around">
+      </h3><div className="h-screen flex flex-col ">
+      
+    
+     
+      
+     
+         <div className="flex  mt-6 justify-center">
+          <button
+            className={`mr-4 text-lg font-medium ${
+              currentTab === Tab.Development
+                ? "text-gray-900"
+                : "text-gray-500 hover:text-gray-900"
+            }`}
+            onClick={() => handleTabChange(Tab.Development)}
+          >
+            Development
+          </button>
+          <button
+            className={`text-lg font-medium ${
+              currentTab === Tab.Analysis
+                ? "text-gray-900"
+                : "text-gray-500 hover:text-gray-900"
+            }`}
+            onClick={() => handleTabChange(Tab.Analysis)}
+          >
+            Analysis
+          </button>
+        </div>
+        {currentTab === Tab.Development && (
+          // Development tab content goes here
+          <div className="flex  items-center justify-evenly">
         <button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none mt-40 " 
           onClick={prevProject}
 >
@@ -43,7 +79,7 @@ function ProjectCarousel({ projects }: Props) {
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
-        <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[300px] bg-gray-800 bg-opacity-40">
+        <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[200px]">
           <h4 className="text-lg font-semibold text-center  md:p-10">
             {projects[currentProject].title}
           </h4>
@@ -74,14 +110,14 @@ function ProjectCarousel({ projects }: Props) {
               {projects[currentProject].summary}
             </p>
 
-            <div className="flex justify-between p-10">
+            <div className="flex justify-between p-7">
               <a href={projects[currentProject].url}>
-                <button className="w-[100px] h-[35px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
+                <button className="w-[100px] h-[50px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
                   Visit Site
                 </button>
               </a>
               <a href={projects[currentProject].sourceCodeUrl}>
-                <button className="w-[100px] h-[35px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
+                <button className="w-[100px] h-[50px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
                   Source
                 </button>
               </a>
@@ -104,10 +140,97 @@ function ProjectCarousel({ projects }: Props) {
           >
             <path d="M9 18l6-6-6-6" />
           </svg>
+          </button>
+          </div>
+        )}
+        {currentTab === Tab.Analysis && (
+          // Analysis tab content goes here
+          <div className="flex  items-center justify-evenly">
+        <button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none mt-40 " 
+          onClick={prevProject}
+>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-10 h-10"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
         </button>
+        <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[200px]">
+          <h4 className="text-lg font-semibold text-center  md:p-10">
+            {projects[currentProject].title}
+          </h4>
+
+          <div
+            className="h-full w-full bg-contain bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${urlFor(
+                projects[currentProject].image
+              ).url()})`,
+            }}
+          />
+
+          <div className="flex justify-around p-2 md:p-4">
+            {projects[currentProject].technologies.map((technology) => (
+              <Image
+                className="rounded-full cursor-pointer hover:opacity-80"
+                key={technology._id}
+                src={urlFor(technology.image).url()}
+                alt=""
+                width="30"
+                height="30"
+              />
+            ))}
+          </div>
+          <div className="mt-6">
+            <p className=" text-sm text-left text-white max-w-lg tracking-wide bg-gray-700 border border-white p-2 md:visible">
+              {projects[currentProject].summary}
+            </p>
+
+            <div className="flex justify-between p-7">
+              <a href={projects[currentProject].url}>
+                <button className="w-[100px] h-[50px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
+                  Visit Site
+                </button>
+              </a>
+              <a href={projects[currentProject].sourceCodeUrl}>
+                <button className="w-[100px] h-[50px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
+                  Source
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none mt-40 items-center "
+          onClick={nextProject}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-10 h-10"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+          </button>
+          </div>
+        )}
       </div>
-    </div>
-  );
+    
+     
+   
+  </>);
 }
 
 export default ProjectCarousel;

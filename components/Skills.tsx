@@ -22,7 +22,7 @@ function Skills({ skills, directionLeft }: Props) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="h-screen flex flex-col text-center items-center pt-[120px] "
+      className="h-screen flex flex-col text-center items-center justify-center "
     >
       <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl text-center ">
         Skills
@@ -67,7 +67,7 @@ function Skills({ skills, directionLeft }: Props) {
       {/* Skills Grid */}
 
       <motion.div
-        className="grid grid-cols-4 md:grid-cols-6 gap-4 sm:gap-6 md:gap-8 "
+        className="grid grid-cols-4  gap-4 sm:gap-6 "
         initial="hidden"
         animate="visible"
         variants={{

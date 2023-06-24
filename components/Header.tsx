@@ -23,15 +23,7 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
         <a className="heroButton ">Projects</a>
       </Link>
       <Link href="#contact">
-       <div className="heroButton cursor-pointer">
-          <SocialIcon
-            network="email"
-          fgColor="white"
-          
-            className="cursor-pointer text-white shadow-md bg-gray-500 hover:bg-gray-800 rounded-full"   
-        ></SocialIcon>
-       Contact
-          </div>
+       <a className="heroButton ">Contact</a>
          
           
         
@@ -40,14 +32,14 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
   );
 
   return (
-    <header className="sticky top-1 p-3 flex justify-between md:justify-around z-10 items-center bg-opacity-50 bg-gray-600">
+    <header className="sticky top-1 p-3 flex justify-between md:justify-evenly z-10 items-center bg-opacity-50 bg-gray-600">
       <div className="flex flex-row space-x-4 pl-5">
         {socials?.map((social) => (
           <SocialIcon
             key={social._id}
             url={social.url}
             fgColor="white"
-            className="flex flex-col rounded-full
+            className="flex flex-col rounded
             hover:scale-110 cursor-pointer text-white shadow-md hover:bg-gray-800  focus:outline-none "
           />
         ))}

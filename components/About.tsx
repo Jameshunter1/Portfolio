@@ -10,7 +10,7 @@ type Props = {
 function About({ pageInfo }: Props) {
   return (
     <>
-      <div className="h-screen flex flex-col text-center items-center  pt-[120px]">
+      <div className="h-screen flex flex-col text-center items-center  justify-center">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -34,13 +34,13 @@ function About({ pageInfo }: Props) {
             src={urlFor(pageInfo.profilePic).url()}
             className=" flex flex-col w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover rounded-full md:rounded-none border-2 border-gray-500 shadow-md "
           />
-          <div className="space-y-4 p-10 items-center mt-5 md:mt-7">
-            <h4 className="text-xl md:text-4xl font-semibold">
+          <div className="space-y-4 p-10 mt-5 md:mt-7">
+            <h4 className="text-2xl font-semibold">
               Here is a{" "}
               <span className="underline decoration-[#5572af]/50">little</span>{" "}
               background
             </h4>
-            <p className="flex text-[12px] md:text-base md:text-[16px] leading-6 md:leading-8 max-w-[400px] justify-center">
+            <p className="flex text-[14px] md:text-base leading-6 md:leading-8 max-w-[500px]  md:text-left p-5">
               {pageInfo.backgroundInformation}
             </p>
           </div>

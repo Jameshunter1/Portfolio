@@ -15,7 +15,7 @@ html {
 
   
   .heroButton {
-    @apply w-[100px] text-white bg-gray-900 rounded shadow-md hover:bg-gray-800 focus:outline-none items-center flex justify-center;
+    @apply w-[100px] text-white bg-gray-900  shadow-md hover:bg-gray-800 focus:outline-none items-center flex justify-center p-1;
   }
 
   .contactInput {
