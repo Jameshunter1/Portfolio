@@ -33,14 +33,14 @@ function Header({ socials , toggleMenu, showMenu}: Props) {
 
   return (
     <header className="sticky top-1 p-3 flex justify-between md:justify-evenly z-10 items-center bg-opacity-50 bg-gray-600">
-      <div className="flex flex-row space-x-4 pl-5">
+      <div className="flex flex-row space-x-4 pl-5 ">
         {socials?.map((social) => (
           <SocialIcon
             key={social._id}
             url={social.url}
             fgColor="white"
-            className="flex flex-col rounded
-            hover:scale-110 cursor-pointer text-white shadow-md hover:bg-gray-800  focus:outline-none "
+            className="flex flex-col 
+            hover:scale-110 cursor-pointer rounded-full outline-1 outline "
           />
         ))}
       </div>
