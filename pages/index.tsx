@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProjectCarousel from "../components/ProjectCarousel";
 import Skills from "../components/Skills";
-import { PageInfo, Project, Skill, Social } from "../typings";
+import { PageInfo, DevelopmentProject, AnalysisProject, Skill, Social } from "../typings";
 import james from "/styles/james.png";
 import { sanityClient } from "../sanity";
 import { groq } from "next-sanity";
@@ -16,11 +16,12 @@ import { useState } from "react";
 type Props = {
   pageInfo: PageInfo;
   skills: Skill[];
-  projects: Project[];
+  developmentProjects: DevelopmentProject[];
+  analysisProjects: AnalysisProject[];
   socials: Social[];
 };
 
-const Home = ({ pageInfo, projects, skills, socials }: Props) => {
+const Home = ({ pageInfo, developmentProjects, analysisProjects, skills, socials }: Props) => {
   const [showMenu, setShowMenu] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -61,7 +62,7 @@ const Home = ({ pageInfo, projects, skills, socials }: Props) => {
 
       {/* Projects */}
       <section id="projects" className="scroll-smooth">
-        <ProjectCarousel projects={projects} />
+        <ProjectCarousel developmentProjects={developmentProjects}  analysisProjects={analysisProjects}/>
       </section>
 
       {/* Contact Me */}
@@ -97,7 +98,12 @@ export const getStaticProps = async () => {
     ...,
     technologies[]->
 }`;
-  const projectQuery = groq`
+  const developmentProjectQuery = groq`
+*[_type =="project"]{
+    ...,
+    technologies[]->
+}`;
+    const analysisProjectQuery = groq`
 *[_type =="project"]{
     ...,
     technologies[]->
@@ -106,10 +112,11 @@ export const getStaticProps = async () => {
 *[_type =="social"]
 `;
   // Make a request to each API endpoint
-  const [pageInfo, skills, projects, socials] = await Promise.all([
+  const [pageInfo, skills, developmentProjects, analysisProjects, socials] = await Promise.all([
     sanityClient.fetch(pageInfoQuery),
     sanityClient.fetch(skillQuery),
-    sanityClient.fetch(projectQuery),
+    sanityClient.fetch(developmentProjectQuery),
+    sanityClient.fetch(analysisProjectQuery),
     sanityClient.fetch(socialQuery),
   ]);
   // Return the response data as props
@@ -117,7 +124,8 @@ export const getStaticProps = async () => {
     props: {
       pageInfo,
       skills,
-      projects,
+      developmentProjects,
+      analysisProjects,
       socials,
     },
   };
