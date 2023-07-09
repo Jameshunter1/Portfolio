@@ -9,14 +9,12 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import skill from "./skill"
 import pageInfo from './pageInfo'
 import social from "./social"
-import developmentproject from "./developmentproject"
-import analysisproject from "./analysisproject"
-
-
+import developmentProjects from "./developmentProjects"
+import analysisProjects from "./analysisProjects"
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    pageInfo, skill, developmentproject, analysisproject, social
+    pageInfo, skill, developmentProjects, analysisProjects, social
   ]),
 })

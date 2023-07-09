@@ -4,20 +4,20 @@ import { sanityClient } from "../../sanity";
 import { AnalysisProject } from "../../typings";
 
 const query = groq`
-*[_type =="project"]{
+*[_type =="analysisProjects"]{
     ...,
     technologies[]->
 }`;
 
 type Data = {
-  projects: AnalysisProject[];
+  analysisProjects: AnalysisProject[];
 };
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const projects: AnalysisProject[] = await sanityClient.fetch(query);
+  const analysisProjects: AnalysisProject[] = await sanityClient.fetch(query);
 
-  res.status(200).json({ projects });
+  res.status(200).json({ analysisProjects });
 }

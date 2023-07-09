@@ -62,7 +62,7 @@ const Home = ({ pageInfo, developmentProjects, analysisProjects, skills, socials
 
       {/* Projects */}
       <section id="projects" className="scroll-smooth">
-        <ProjectCarousel developmentProjects={developmentProjects}  analysisProjects={analysisProjects}/>
+        <ProjectCarousel developmentProjects={developmentProjects} analysisProjects={analysisProjects} />
       </section>
 
       {/* Contact Me */}
@@ -98,13 +98,13 @@ export const getStaticProps = async () => {
     ...,
     technologies[]->
 }`;
-  const developmentProjectQuery = groq`
-*[_type =="project"]{
+  const developmentProjectsQuery = groq`
+*[_type =="developmentProjects"]{
     ...,
     technologies[]->
 }`;
-    const analysisProjectQuery = groq`
-*[_type =="project"]{
+    const analysisProjectsQuery = groq`
+*[_type =="analysisProjects"]{
     ...,
     technologies[]->
 }`;
@@ -115,8 +115,8 @@ export const getStaticProps = async () => {
   const [pageInfo, skills, developmentProjects, analysisProjects, socials] = await Promise.all([
     sanityClient.fetch(pageInfoQuery),
     sanityClient.fetch(skillQuery),
-    sanityClient.fetch(developmentProjectQuery),
-    sanityClient.fetch(analysisProjectQuery),
+    sanityClient.fetch(developmentProjectsQuery),
+    sanityClient.fetch(analysisProjectsQuery),
     sanityClient.fetch(socialQuery),
   ]);
   // Return the response data as props

@@ -40,7 +40,7 @@ export interface Skill extends SanityBody {
 }
 
 export interface DevelopmentProject extends SanityBody {
-  _type: "project";
+  _type: "developmentProjects";
   image: Image;
   summary: string;
   title: string;
@@ -49,7 +49,7 @@ export interface DevelopmentProject extends SanityBody {
   sourceCodeUrl: string;
 }
 export interface AnalysisProject extends SanityBody {
-  _type: "project";
+  _type: "analysisProjects";
   image: Image;
   summary: string;
   title: string;
