@@ -98,13 +98,13 @@ export const getStaticProps = async () => {
     ...,
     technologies[]->
 }`;
-  const developmentProjectsQuery = groq`
-*[_type =="developmentProjects"]{
+  const developmentProjectQuery = groq`
+*[_type =="project"]{
     ...,
     technologies[]->
 }`;
-    const analysisProjectsQuery = groq`
-*[_type =="analysisProjects"]{
+    const analysisProjectQuery = groq`
+*[_type =="project"]{
     ...,
     technologies[]->
 }`;
@@ -115,8 +115,8 @@ export const getStaticProps = async () => {
   const [pageInfo, skills, developmentProjects, analysisProjects, socials] = await Promise.all([
     sanityClient.fetch(pageInfoQuery),
     sanityClient.fetch(skillQuery),
-    sanityClient.fetch(developmentProjectsQuery),
-    sanityClient.fetch(analysisProjectsQuery),
+    sanityClient.fetch(developmentProjectQuery),
+    sanityClient.fetch(analysisProjectQuery),
     sanityClient.fetch(socialQuery),
   ]);
   // Return the response data as props

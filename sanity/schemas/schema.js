@@ -9,8 +9,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import skill from "./skill"
 import pageInfo from './pageInfo'
 import social from "./social"
-import developmentProjects from "./developmentProjects"
-import analysisProjects from "./analysisProjects"
+import developmentProjects from "./developmentProject"
+import analysisProjects from "./analysisProject"
 
 export default createSchema({
   name: 'default',

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { DevelopmentProject, AnalysisProject } from "../typings";
 import { urlFor } from "../sanity";
 import Image from "next/image";
-import Tabs from "@material-ui/core/Tabs";
-import { Tab as MaterialTab } from "@material-ui/core";
 import {motion} from "framer-motion"
 
 
@@ -41,11 +39,11 @@ const [currentTab, setCurrentTab] = useState(
     }
   };
 
-  const handleTabChange = (event: React.ChangeEvent<{}>, tab: Tab) => {
-  setCurrentTab(tab);
-    setCurrentDevelopmentProject(0); // Reset the current project index when switching tabs
-    setCurrentAnalysisProject(0);
-  };
+const handleTabChange = (tab: Tab) => {
+setCurrentTab(tab);
+setCurrentDevelopmentProject(0); // Reset the current project index when switching tabs
+setCurrentAnalysisProject(0);
+};
    
   return (
     <>
@@ -57,22 +55,24 @@ const [currentTab, setCurrentTab] = useState(
      
      
            
-        <Tabs value={currentTab} onChange={handleTabChange} className="pt-[50px]">
-          <MaterialTab label="Development" value={Tab.Development} />
-          <MaterialTab label="Analysis" value={Tab.Analysis} />
-          </Tabs>
-        
-        {currentTab === Tab.Development && developmentProjects?.length > 0 && (
-          <h2 className="pt-5 text-lg uppercase font-semibold font-seri underline tracking-wide">
-            {developmentProjects.length > 0 && developmentProjects[currentDevelopmentProject].title}
-          </h2>
-        )}
-       
-        {currentTab === Tab.Analysis && analysisProjects?.length > 0 && (
-          <h2 className="pt-5 text-lg uppercase font-semibold font-seri underline tracking-wide">
-            {analysisProjects.length > 0 && analysisProjects[currentAnalysisProject].title}
-          </h2>
-        )}
+         <div className="pt-[50px]">
+      <button
+        className={`px-4 py-2 rounded-full ${
+          currentTab === Tab.Development ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-600"
+        }`}
+        onClick={() => handleTabChange(Tab.Development)}
+      >
+        Development
+      </button>
+      <button
+        className={`px-4 py-2 rounded-full ${
+          currentTab === Tab.Analysis ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-600"
+        }`}
+        onClick={() => handleTabChange(Tab.Analysis)}
+      >
+        Analysis
+      </button>
+    </div>
           
        
       {currentTab === Tab.Development && (

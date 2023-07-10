@@ -20,10 +20,10 @@ function About({ pageInfo }: Props) {
         <h3 className=" uppercase tracking-[20px] text-gray-500 text-2xl text-center mb-10">
           About
         </h3>
-        <div className="flex flex-col md:flex-row items-center justify-center md:space-x-10">
+        <div className="flex flex-col md:flex-row items-center justify-center md:space-x-5">
           <motion.img
             initial={{
-              x: -200,
+              x: 200,
               opacity: 0,
             }}
             transition={{
@@ -32,7 +32,7 @@ function About({ pageInfo }: Props) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             src={urlFor(pageInfo.profilePic).url()}
-            className=" flex flex-col w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-cover rounded-full md:rounded-none border-2 border-gray-500 shadow-md "
+            className=" flex flex-col w-[200px] h-[200px] md:w-[300px] md:h-[300px] object-contain rounded-full md:rounded-none border-2 border-gray-500 shadow-md "
           />
           <div className="space-y-4 p-10 mt-5 md:mt-7">
             <h4 className="text-2xl font-semibold">
@@ -40,7 +40,7 @@ function About({ pageInfo }: Props) {
               <span className="underline decoration-[#5572af]/50">little</span>{" "}
               background
             </h4>
-            <p className="flex text-[14px] md:text-base leading-6 md:leading-8 max-w-[500px]  md:text-left p-5">
+            <p className="flex text-[12px] leading-2 md:leading-8 max-w-[700px] text-left p-5">
               {pageInfo.backgroundInformation}
             </p>
           </div>
