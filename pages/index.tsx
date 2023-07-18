@@ -99,12 +99,12 @@ export const getStaticProps = async () => {
     technologies[]->
 }`;
   const developmentProjectQuery = groq`
-*[_type =="project"]{
+*[_type =="developmentProjects"]{
     ...,
     technologies[]->
 }`;
     const analysisProjectQuery = groq`
-*[_type =="project"]{
+*[_type =="analysisProjects"]{
     ...,
     technologies[]->
 }`;

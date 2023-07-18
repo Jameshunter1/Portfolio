@@ -1,7 +1,8 @@
+/* globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 html {
   scroll-behavior: smooth;
@@ -13,7 +14,6 @@ html {
     @apply bg-black;
   }
 
-  
   .heroButton {
     @apply w-[100px] text-white bg-gray-900  shadow-md hover:bg-gray-800 focus:outline-none items-center flex justify-center p-1;
   }
@@ -21,7 +21,37 @@ html {
   .contactInput {
     @apply flex flex-col bg-gray-800 outline-none rounded border-b  border-[#242424] text-gray-50 placeholder-gray-500 transition-all focus:border-white focus:text-white hover:border-white h-[35px] md:h-[40px] px-5 ;
   }
+
+  /* Animation keyframes for sliding buttons */
+  @keyframes slideRight {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideLeft {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
+  .animate-slideLeft {
+    animation: slideLeft 0.3s ease-in-out;
+  }
+
+  .animate-slideRight {
+    animation: slideRight 0.3s ease-in-out;
+  }
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {

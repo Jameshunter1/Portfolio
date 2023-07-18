@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="James Portfolio" />
         <meta
           name="keywords"
-          content="James, Portfolio, Web Developer, Software Engineer"
+          content="James, Portfolio, Web Developer, Data Analyst"
         />
         <meta name="author" content="James" />
         <meta name="theme-color" content="#5572af" />

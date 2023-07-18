@@ -6,8 +6,8 @@ import {motion} from "framer-motion"
 
 
 type Props = {
- developmentProjects: DevelopmentProject[];
-analysisProjects: AnalysisProject[];
+  developmentProjects: DevelopmentProject[];
+  analysisProjects: AnalysisProject[];
 
 };
 
@@ -17,45 +17,47 @@ enum Tab {
 }
 
 function ProjectCarousel({ analysisProjects, developmentProjects }: Props) {
+
   const [currentDevelopmentProject, setCurrentDevelopmentProject] = useState(Tab.Development);
   const [currentAnalysisProject, setCurrentAnalysisProject] = useState(Tab.Analysis);
 
 const [currentTab, setCurrentTab] = useState(
   Tab.Development
 );
-  const nextProject = () => {
+    const nextProject = () => {
     if (currentTab === Tab.Development) {
-      setCurrentDevelopmentProject((currentDevelopmentProject + 1) % developmentProjects?.length);
+      setCurrentDevelopmentProject((prevDevelopmentProject) => (prevDevelopmentProject + 1) % developmentProjects?.length);
     } else if (currentTab === Tab.Analysis) {
-      setCurrentAnalysisProject((currentAnalysisProject + 1) % analysisProjects?.length);
+      setCurrentAnalysisProject((prevAnalysisProject) => (prevAnalysisProject + 1) % analysisProjects?.length);
     }
   };
 
   const prevProject = () => {
     if (currentTab === Tab.Development) {
-      setCurrentDevelopmentProject((currentDevelopmentProject + developmentProjects?.length - 1) % developmentProjects?.length);
+      setCurrentDevelopmentProject((prevDevelopmentProject) => (prevDevelopmentProject + developmentProjects?.length - 1) % developmentProjects?.length);
     } else if (currentTab === Tab.Analysis) {
-      setCurrentAnalysisProject((currentAnalysisProject + analysisProjects?.length - 1) % analysisProjects?.length);
+      setCurrentAnalysisProject((prevAnalysisProject) => (prevAnalysisProject + analysisProjects?.length - 1) % analysisProjects?.length);
     }
   };
 
-const handleTabChange = (tab: Tab) => {
-setCurrentTab(tab);
-setCurrentDevelopmentProject(0); // Reset the current project index when switching tabs
-setCurrentAnalysisProject(0);
-};
+  const handleTabChange = (tab: Tab) => {
+    setCurrentTab(tab);
+
+    if (tab === Tab.Development) {
+      setCurrentDevelopmentProject(0);
+    } else if (tab === Tab.Analysis) {
+      setCurrentAnalysisProject(0);
+    }
+  };
    
   return (
     <>
-      <div className="h-screen flex flex-col text-center items-center justify-center ">
+      <div className="h-screen flex flex-col text-center items-center justify-center">
        <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl text-center ">
         Projects
       </h3>
-     
-     
-     
-           
-         <div className="pt-[50px]">
+   
+         <div className="mt-[50px] flex">
       <button
         className={`px-4 py-2 rounded-full ${
           currentTab === Tab.Development ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-600"
@@ -79,7 +81,7 @@ setCurrentAnalysisProject(0);
         // Development tab content goes here
      
         <div className="flex  items-center justify-center">
-          <button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none "
+          <motion.button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideLeft"
             onClick={prevProject}
           >
             <svg
@@ -94,27 +96,27 @@ setCurrentAnalysisProject(0);
             >
               <path d="M15 18l-6-6 6-6" />
             </svg>
-          </button>
-          <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[200px] mt-[40px]">
+          </motion.button>
+          <div className="justify-center mt-[40px]">
               
-              <motion.div
-                animate={{
-      scale: [1, 2, 2, 1, 1],
-      rotate: [0, 0, 270, 270, 0],
-                  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-    
-    }}
+             <motion.div
+          animate={{
+            scale: [1, 2, 2, 1, 1],
+            rotate: [0, 0, 270, 270, 0],
+            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          }}
+          className="bg-center bg-no-repeat bg-contain "
+          style={{
+            backgroundImage: developmentProjects?.length > 0
+              ? `url(${urlFor(developmentProjects[currentDevelopmentProject]?.image).url()})`
+              : 'none',
+            width: "300px", // Set a fixed width to maintain consistent image size
+            height: "300px", // Set a fixed height to maintain consistent image size
+          }}
+        />
 
-              className="h-full w-full bg-contain bg-center bg-no-repeat"
-              style={{
-                backgroundImage: developmentProjects?.length > 0
-                  ? `url(${urlFor(developmentProjects[currentDevelopmentProject]?.image).url()})`
-                  : 'none',
-              }}
-            />
 
-
-            <div className="flex justify-around p-5 md:p-4">
+            <div className="flex justify-center p-5 md:p-4">
               {developmentProjects?.length > 0 && developmentProjects[currentDevelopmentProject]?.technologies.map((technology) => (
                 <Image
                   className="rounded-sm cursor-pointer hover:opacity-80"
@@ -128,7 +130,7 @@ setCurrentAnalysisProject(0);
 
             </div>
             
-              {developmentProjects?.length > 0 && developmentProjects[currentDevelopmentProject]?.summary}
+              {/* {developmentProjects?.length > 0 && developmentProjects[currentDevelopmentProject]?.summary} */}
               <div className="flex justify-evenly p-7">
               <a href={developmentProjects[currentDevelopmentProject]?.url}>
                   <button className="w-[100px] h-[50px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
@@ -145,8 +147,8 @@ setCurrentAnalysisProject(0);
          
             </div>
             <div className="flex  items-center justify-evenly">   
-             <button
-            className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none  "
+             <motion.button
+            className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideRight"
             onClick={nextProject}
           >
             <svg
@@ -161,7 +163,7 @@ setCurrentAnalysisProject(0);
             >
               <path d="M9 18l6-6-6-6" />
             </svg>
-                  </button>
+                  </motion.button>
                   </div>
         
         
@@ -173,7 +175,7 @@ setCurrentAnalysisProject(0);
      
       
         <div className="flex  items-center justify-evenly">
-          <button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none "
+          <motion.button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideLeft "
             onClick={prevProject}
           >
             <svg
@@ -188,26 +190,28 @@ setCurrentAnalysisProject(0);
             >
               <path d="M15 18l-6-6 6-6" />
             </svg>
-          </button>
-          <div className="justify-center w-[350px] md:w-[450px] h-[150px] md:h-[200px] mt-[40px]">
+          </motion.button>
+          <div className="justify-center  mt-[40px]">
               
-             <motion.div
-                animate={{
-      scale: [1, 2, 2, 1, 1],
-      rotate: [0, 0, 270, 270, 0],
-                  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-    
-    }}
-              className="h-full w-full bg-contain bg-center bg-no-repeat justify-center"
-              style={{
-                backgroundImage: analysisProjects?.length > 0
-                  ? `url(${urlFor(analysisProjects[currentAnalysisProject]?.image).url()})`
-                  : 'none',
-              }}
-            />
+  <motion.div
+          animate={{
+            scale: [1, 2, 2, 1, 1],
+            rotate: [0, 0, 270, 270, 0],
+            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          }}
+          className="bg-center bg-no-repeat justify-center"
+          style={{
+            backgroundImage: analysisProjects?.length > 0
+              ? `url(${urlFor(analysisProjects[currentAnalysisProject]?.image).url()})`
+              : 'none',
+            width: "300px", // Set a fixed width to maintain consistent image size
+            height: "300px", // Set a fixed height to maintain consistent image size
+          }}
+        />
 
 
-            <div className="flex justify-around p-2 md:p-4">
+
+            <div className="flex justify-center p-2 md:p-4">
               {analysisProjects?.length > 0 && analysisProjects[currentAnalysisProject]?.technologies.map((technology) => (
                 <Image
                   className="rounded-sm cursor-pointer hover:opacity-80"
@@ -221,11 +225,11 @@ setCurrentAnalysisProject(0);
 
             </div>
            
-              {analysisProjects?.length > 0 && analysisProjects[currentAnalysisProject]?.summary}
+              {/* {analysisProjects?.length > 0 && analysisProjects[currentAnalysisProject].summary} */}
            
     
-           <div className="flex justify-between p-7">
-             <a href={analysisProjects[currentDevelopmentProject]?.url}>
+           <div className="flex justify-evenly p-7">
+             <a href={analysisProjects[currentAnalysisProject]?.url}>
                   <button className="w-[100px] h-[50px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
                     Visit Site
                   </button>
