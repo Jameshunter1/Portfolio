@@ -80,12 +80,14 @@ const [currentTab, setCurrentTab] = useState(
       {currentTab === Tab.Development && (
         // Development tab content goes here
      
-          <div className="flex  items-center justify-items-center">
+         <div className=" ">
+       
          
-          <motion.button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideLeft"
-            onClick={prevProject}
-          >
-            <svg
+            
+          <div className=" flex p-5 md:p-4 items-center justify-evenly">
+              <motion.button className=" hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideLeft w-10 h-10"
+            onClick={prevProject}>
+               <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -98,8 +100,6 @@ const [currentTab, setCurrentTab] = useState(
               <path d="M15 18l-6-6 6-6" />
             </svg>
               </motion.button>
-            
-         
               
             <motion.div
           animate={{
@@ -107,21 +107,35 @@ const [currentTab, setCurrentTab] = useState(
             rotate: [0, 0, 270, 270, 0],
             
           }}
-          className="bg-center bg-no-repeat bg-contain justify-center items-center"
+          className="bg-center bg-no-repeat bg-cover"
           style={{
             backgroundImage: developmentProjects?.length > 0
               ? `url(${urlFor(developmentProjects[currentDevelopmentProject]?.image).url()})`
               : 'none',
-            width: "300px", // Set a fixed width to maintain consistent image size
-            height: "300px", // Set a fixed height to maintain consistent image size
+            width: "550px", // Set a fixed width to maintain consistent image size
+            height: "350px", // Set a fixed height to maintain consistent image size
           }}
         />
-
-
-            <div className=" p-5 md:p-4 ">
+  <motion.button className=" hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideLeft w-10 h-10"
+            onClick={prevProject}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+     
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+            </motion.button>
+            </div>
+           <div>
               {developmentProjects?.length > 0 && developmentProjects[currentDevelopmentProject]?.technologies.map((technology) => (
                 <Image
-                  className="rounded-sm cursor-pointer hover:opacity-80 bg-center bg-contain"
+                  className="rounded-sm cursor-pointer hover:opacity-80 bg-center bg-contain "
                   key={technology._id}
                   src={urlFor(technology.image).url()}
                   alt=""
@@ -130,10 +144,12 @@ const [currentTab, setCurrentTab] = useState(
                 />
               ))}
 
-          
-            
-              {/* {developmentProjects?.length > 0 && developmentProjects[currentDevelopmentProject]?.summary} */}
-              <div className="flex justify-evenly p-7 space-x-2">
+          </div>
+     <div className="max-w-[600px] ">
+              {developmentProjects?.length > 0 && developmentProjects[currentDevelopmentProject]?.summary} 
+              </div>
+              <div className="pt-9">
+                
               <a href={developmentProjects[currentDevelopmentProject]?.url}>
                   <button className="w-[100px] h-[50px] text-white bg-gray-900 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none">
                     Visit Site
@@ -144,41 +160,20 @@ const [currentTab, setCurrentTab] = useState(
                     Source
                   </button>
                 </a>
+         </div>
+           <div className=" flex items-center">   
+           
             </div>
+          </div>
       
-         
-            </div>
-            <div className="flex  items-center justify-evenly">   
-             <motion.button
-            className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideRight"
-            onClick={nextProject}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-10 h-10"
-            >
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-                  </motion.button>
-                  </div>
-        
-        
-    </div>
+  
     
       )} 
       {currentTab === Tab.Analysis && (
         // Analysis tab content goes here
-     
-      
-                <div className="flex items-center">
-
-              <motion.button className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideLeft "
+  
+                <div className="items-center">
+              <motion.button className=" hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none animate-slideLeft "
             onClick={prevProject}
           >
             <svg
@@ -246,9 +241,9 @@ const [currentTab, setCurrentTab] = useState(
           </div>
            
            
-            <div className="flex  items-center justify-evenly">   
+            <div className="  items-center justify-evenly">   
              <motion.button
-            className="hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none "
+            className="flex hover:bg-blue-700 text-white font-bold rounded-full focus:outline-none "
             onClick={nextProject}
           >
             <svg
